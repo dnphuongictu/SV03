@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ViDroid Assistant Dataset Tool - Slide đề tài</title>
+  <style>
+    :root {
+      --ink: #17212c;
+      --muted: #556271;
+      --line: #d8dfe8;
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --accent: #2f65b0;
+      --accent-2: #b94f6a;
+      --soft: #eef4ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+    .slide {
+      width: min(1280px, 100vw);
+      aspect-ratio: 16 / 9;
+      background: var(--panel);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      padding: 54px 62px;
+      border: 1px solid var(--line);
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 48px;
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+    .subtitle {
+      margin: 20px 0 28px;
+      font-size: 22px;
+      line-height: 1.42;
+      color: var(--muted);
+    }
+    .problem {
+      border-left: 7px solid var(--accent);
+      background: var(--soft);
+      padding: 18px 20px;
+      font-size: 20px;
+      line-height: 1.38;
+      margin-bottom: 22px;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .chip {
+      border: 1px solid var(--line);
+      padding: 9px 12px;
+      font-size: 16px;
+      font-weight: 700;
+      background: #fff;
+    }
+    .tool {
+      border: 1px solid var(--line);
+      background: #fbfcfe;
+      padding: 24px;
+      min-height: 370px;
+    }
+    .input {
+      background: white;
+      border: 1px solid var(--line);
+      padding: 16px;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr 42px 1fr;
+      align-items: center;
+      gap: 12px;
+      margin: 18px 0;
+    }
+    .box {
+      min-height: 104px;
+      border: 1px solid var(--line);
+      background: white;
+      padding: 14px;
+    }
+    .box b { display: block; margin-bottom: 8px; font-size: 17px; }
+    .box code {
+      color: var(--accent-2);
+      font-size: 15px;
+      white-space: pre-wrap;
+    }
+    .arrow {
+      height: 3px;
+      background: var(--accent);
+      position: relative;
+    }
+    .arrow::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: -6px;
+      border-left: 12px solid var(--accent);
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      padding: 16px;
+      min-height: 104px;
+      background: #fff;
+    }
+    .card b { display: block; margin-bottom: 8px; font-size: 18px; }
+    .card span { color: var(--muted); font-size: 16px; line-height: 1.35; }
+    @media print {
+      body { background: white; }
+      .slide { border: 0; width: 100vw; }
+    }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <section>
+      <div class="eyebrow">Đề tài 03 · Tiếng Việt · Android AI offline</div>
+      <h1>ViDroid Assistant Dataset Tool</h1>
+      <p class="subtitle">Công cụ tạo, kiểm tra và xuất dữ liệu câu lệnh tiếng Việt cho trợ lý Android chạy offline.</p>
+      <div class="problem">
+        Trợ lý di động tiếng Việt cần dữ liệu tự nhiên, đúng tham số và an toàn; nếu thiếu dữ liệu tốt, mô hình AI rất khó dùng thật.
+      </div>
+      <div class="chips">
+        <span class="chip">Intent schema</span>
+        <span class="chip">JSON validator</span>
+        <span class="chip">Paraphrase tiếng Việt</span>
+        <span class="chip">Export dataset</span>
+      </div>
+    </section>
+    <section class="tool">
+      <div class="input">"Đặt báo thức 6 giờ sáng mai để đi học"</div>
+      <div class="flow">
+        <div class="box"><b>Nhãn Intent</b><code>set_alarm</code><br><code>requires_confirmation: false</code></div>
+        <div class="arrow"></div>
+        <div class="box"><b>Tham số JSON</b><code>{"hour":6,"minute":0,"date":"tomorrow"}</code></div>
+      </div>
+      <div class="grid">
+        <div class="card"><b>Sản phẩm</b><span>Web tool gán nhãn câu lệnh, kiểm tra JSON và xuất CSV/JSON.</span></div>
+        <div class="card"><b>Dữ liệu mẫu</b><span>500-1000 câu tiếng Việt: báo thức, bản đồ, gọi điện, SMS, mở app.</span></div>
+        <div class="card"><b>Kế thừa</b><span>VIntentAgent, ViDroidCall, constrained output và safety validator.</span></div>
+        <div class="card"><b>Đầu ra</b><span>Tool chạy được, dataset mẫu, hướng dẫn quy trình gán nhãn.</span></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

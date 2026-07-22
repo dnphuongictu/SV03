@@ -1,0 +1,23 @@
+{
+  "n": 6,
+  "intent_counts": {
+    "set_alarm": 1,
+    "open_map": 1,
+    "send_sms": 1,
+    "call_contact": 1,
+    "unsupported": 1,
+    "clarify": 1
+  },
+  "split_counts": {
+    "train": 3,
+    "validation": 1,
+    "test_ood": 1,
+    "test_ambiguous": 1
+  },
+  "risk_counts": {
+    "low": 2,
+    "medium": 3,
+    "high": 1
+  },
+  "unique_utterance_rate": 1.0
+}
