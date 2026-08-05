@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Node
+node_modules/
+
+# Android / Gradle (nếu build demo/android_mockup_nguoi_lon_tuoi/ tại đây)
+.gradle/
+build/
+local.properties
+*.iml
+.idea/
+captures/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Công cụ AI hỗ trợ phiên làm việc — không phải nội dung dự án
+.claude/

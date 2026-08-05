@@ -1,0 +1,6 @@
+{"id":"VDC0001","utterance":"Dat bao thuc 6 gio sang mai de di hoc","language":"vi","intent":"set_alarm","arguments":{"hour":6,"minute":0,"date":"tomorrow","label":"di hoc"},"risk_level":"low","split":"train","notes":"clear"}
+{"id":"VDC0002","utterance":"Mo ban do chi duong den truong ICTU","language":"vi","intent":"open_map","arguments":{"destination":"truong ICTU"},"risk_level":"low","split":"train","notes":"clear"}
+{"id":"VDC0003","utterance":"Nhan cho An la toi den muon 10 phut","language":"vi","intent":"send_sms","arguments":{"contact":"An","message":"toi den muon 10 phut"},"risk_level":"medium","split":"train","notes":"requires confirmation"}
+{"id":"VDC0004","utterance":"Goi cho me","language":"vi","intent":"call_contact","arguments":{"contact":"me"},"risk_level":"medium","split":"validation","notes":"requires confirmation"}
+{"id":"VDC0005","utterance":"Dat ve may bay re nhat di Da Nang","language":"vi","intent":"unsupported","arguments":{},"risk_level":"high","split":"test_ood","notes":"unsupported task"}
+{"id":"VDC0006","utterance":"Nhan cho Nam","language":"vi","intent":"clarify","arguments":{"missing":["message"]},"risk_level":"medium","split":"test_ambiguous","notes":"missing message"}

@@ -1,0 +1,320 @@
+{
+  "protocol_id": "vintent-execution-pilot-v1-20260627",
+  "protocol_sha256": "C67F00460A14E52DABC32C6EDAFBE5C0D8D17DBA5E90BD49231CBDE7FAC92794",
+  "task_count": 22,
+  "sources": {
+    "v21_train239": {
+      "path": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\data\\eval\\vi_droidcall_train239.jsonl",
+      "sha256": "1AEFC6E458F63355A9310C634842B6BD64D8416A91657DB2857B902743798D60",
+      "count": 239
+    },
+    "v8_train408": {
+      "path": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\data\\eval\\vi_droidcall_train408_v8.jsonl",
+      "sha256": "37D1511FF35CC681FBDEAD50374E5F22E4EA256B199979290E66932602356552",
+      "count": 408
+    },
+    "fresh_locked126": {
+      "path": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\data\\eval\\vi_droidcall_fresh_test_locked_20260626.jsonl",
+      "sha256": "051C811625F0D22925EA60868BDCE03A67B291E34976636306DB9BF8F13387B4",
+      "count": 126
+    }
+  },
+  "thresholds": {
+    "sequence_ratio": 0.9,
+    "char3_jaccard": 0.7
+  },
+  "summary": {
+    "exact_normalized_overlap_tasks": 0,
+    "high_sequence_match_tasks": 0,
+    "high_char3_jaccard_tasks": 0,
+    "interpretation": "This pilot measures execution feasibility rather than an unbiased model-generalization estimate. Similarities are reported for transparency and must not be hidden."
+  },
+  "rows": [
+    {
+      "id": "exec_dial_01",
+      "query": "Mở bàn phím gọi số 0900000123",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v8_train408",
+        "source_id": "aug2_dial_002",
+        "source_query": "Cho tôi gọi số 0912000111",
+        "exact_normalized": false,
+        "sequence_ratio": 0.62963,
+        "char3_jaccard": 0.27027
+      }
+    },
+    {
+      "id": "exec_sms_01",
+      "query": "Soạn tin nhắn cho 0900000123 với nội dung PILOT ONLY",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v8_train408",
+        "source_id": "vdc_sms_005",
+        "source_query": "Soạn tin nhắn cho 0333456789 nội dung xin lỗi tôi bận",
+        "exact_normalized": false,
+        "sequence_ratio": 0.685714,
+        "char3_jaccard": 0.347826
+      }
+    },
+    {
+      "id": "exec_email_01",
+      "query": "Soạn email cho pilot@example.com tiêu đề PILOT nội dung KHONG GUI",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v8_train408",
+        "source_id": "aug3_email_001",
+        "source_query": "Gửi email tới an.nguyen@example.com chủ đề Lịch họp, nội dung: Họp chuyển sang 4 giờ chiều",
+        "exact_normalized": false,
+        "sequence_ratio": 0.580645,
+        "char3_jaccard": 0.277778
+      }
+    },
+    {
+      "id": "exec_contact_insert_01",
+      "query": "Tạo liên hệ thử nghiệm tên Pilot Test số 0900000123",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v8_train408",
+        "source_id": "aug_contact_004",
+        "source_query": "Lưu liên hệ mới tên Bảo số 0778901234",
+        "exact_normalized": false,
+        "sequence_ratio": 0.590909,
+        "char3_jaccard": 0.234375
+      }
+    },
+    {
+      "id": "exec_event_insert_01",
+      "query": "Tạo lịch PILOT REVIEW lúc 9 giờ ngày 30 tháng 12 năm 2026 tại Phòng Test",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v21_train239",
+        "source_id": "vdc_event_012",
+        "source_query": "Tạo nhắc nhở họp team lúc 10 giờ sáng tại phòng 203",
+        "exact_normalized": false,
+        "sequence_ratio": 0.552846,
+        "char3_jaccard": 0.247312
+      }
+    },
+    {
+      "id": "exec_map_nearby_01",
+      "query": "Tìm hiệu thuốc gần đây trên bản đồ",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v8_train408",
+        "source_id": "vdc_location_016",
+        "source_query": "Tìm hiệu thuốc gần đây",
+        "exact_normalized": false,
+        "sequence_ratio": 0.785714,
+        "char3_jaccard": 0.666667
+      }
+    },
+    {
+      "id": "exec_map_route_01",
+      "query": "Chỉ đường đến Bệnh viện Chợ Rẫy",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v8_train408",
+        "source_id": "aug_location_001",
+        "source_query": "Chỉ đường đến bệnh viện Bạch Mai",
+        "exact_normalized": false,
+        "sequence_ratio": 0.888889,
+        "char3_jaccard": 0.6
+      }
+    },
+    {
+      "id": "exec_web_01",
+      "query": "Tìm trên web thông tin thời tiết Đà Nẵng ngày mai",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v8_train408",
+        "source_id": "vdc_web_002",
+        "source_query": "Tìm trên Google thời tiết Hà Nội ngày mai",
+        "exact_normalized": false,
+        "sequence_ratio": 0.733333,
+        "char3_jaccard": 0.421053
+      }
+    },
+    {
+      "id": "exec_camera_open_01",
+      "query": "Mở ứng dụng camera ở chế độ chụp ảnh",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v8_train408",
+        "source_id": "aug5_camstill_002",
+        "source_query": "Khởi động camera để chụp ảnh",
+        "exact_normalized": false,
+        "sequence_ratio": 0.71875,
+        "char3_jaccard": 0.4
+      }
+    },
+    {
+      "id": "exec_camera_capture_01",
+      "query": "Chụp một tấm ảnh ngay bây giờ",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v8_train408",
+        "source_id": "aug5_imgcap_002",
+        "source_query": "Chụp một tấm hình ngay đi",
+        "exact_normalized": false,
+        "sequence_ratio": 0.814815,
+        "char3_jaccard": 0.53125
+      }
+    },
+    {
+      "id": "exec_video_open_01",
+      "query": "Mở máy quay ở chế độ video",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v21_train239",
+        "source_id": "vdc_video_open_005",
+        "source_query": "Mở camera ở chế độ video",
+        "exact_normalized": false,
+        "sequence_ratio": 0.8,
+        "char3_jaccard": 0.466667
+      }
+    },
+    {
+      "id": "exec_settings_wifi_01",
+      "query": "Mở trang cài đặt WiFi",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v21_train239",
+        "source_id": "vdc_settings_001",
+        "source_query": "Mở cài đặt Wi-Fi",
+        "exact_normalized": false,
+        "sequence_ratio": 0.810811,
+        "char3_jaccard": 0.434783
+      }
+    },
+    {
+      "id": "exec_settings_bt_01",
+      "query": "Mở trang cài đặt Bluetooth",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v21_train239",
+        "source_id": "vdc_settings_002",
+        "source_query": "Vào phần cài đặt Bluetooth",
+        "exact_normalized": false,
+        "sequence_ratio": 0.846154,
+        "char3_jaccard": 0.5
+      }
+    },
+    {
+      "id": "exec_get_content_01",
+      "query": "Chọn một ảnh từ thư viện để dùng tạm thời",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v21_train239",
+        "source_id": "vdc_get_content_007",
+        "source_query": "Chọn một ảnh từ thư viện ảnh trong máy",
+        "exact_normalized": false,
+        "sequence_ratio": 0.759494,
+        "char3_jaccard": 0.521739
+      }
+    },
+    {
+      "id": "exec_open_document_01",
+      "query": "Mở một tài liệu PDF có sẵn trong máy",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v21_train239",
+        "source_id": "vdc_get_content_005",
+        "source_query": "Chọn một tài liệu PDF",
+        "exact_normalized": false,
+        "sequence_ratio": 0.631579,
+        "char3_jaccard": 0.394737
+      }
+    },
+    {
+      "id": "exec_create_document_01",
+      "query": "Tạo tệp văn bản mới tên pilot_note.txt",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v21_train239",
+        "source_id": "vdc_create_doc_001",
+        "source_query": "Tạo tệp văn bản mới tên ghi_chu.txt",
+        "exact_normalized": false,
+        "sequence_ratio": 0.821918,
+        "char3_jaccard": 0.511628
+      }
+    },
+    {
+      "id": "exec_ringtone_01",
+      "query": "Mở trình chọn nhạc chuông",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v21_train239",
+        "source_id": "vdc_ringtone_002",
+        "source_query": "Cho tôi chọn nhạc chuông",
+        "exact_normalized": false,
+        "sequence_ratio": 0.857143,
+        "char3_jaccard": 0.555556
+      }
+    },
+    {
+      "id": "exec_negative_call_01",
+      "query": "Giúp tôi liên lạc qua điện thoại",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v8_train408",
+        "source_id": "vdc_ringtone_003",
+        "source_query": "Đổi nhạc chuông điện thoại",
+        "exact_normalized": false,
+        "sequence_ratio": 0.655172,
+        "char3_jaccard": 0.268293
+      }
+    },
+    {
+      "id": "exec_negative_sms_01",
+      "query": "Gửi tin nhắn rằng tôi sẽ đến muộn",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v21_train239",
+        "source_id": "vdc_sms_001",
+        "source_query": "Nhắn 0912345678 rằng tôi sẽ đến muộn 15 phút",
+        "exact_normalized": false,
+        "sequence_ratio": 0.649351,
+        "char3_jaccard": 0.431373
+      }
+    },
+    {
+      "id": "exec_negative_transfer_01",
+      "query": "Chuyển 500 nghìn đồng cho bạn tôi",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v8_train408",
+        "source_id": "vdc_clarification_003",
+        "source_query": "Nhắn tin cho bạn tôi",
+        "exact_normalized": false,
+        "sequence_ratio": 0.641509,
+        "char3_jaccard": 0.305556
+      }
+    },
+    {
+      "id": "exec_negative_food_01",
+      "query": "Đặt một phần cơm giao đến nhà",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v21_train239",
+        "source_id": "vdc_unsupported_001",
+        "source_query": "Đặt một chiếc pizza hải sản giao tới nhà tôi",
+        "exact_normalized": false,
+        "sequence_ratio": 0.60274,
+        "char3_jaccard": 0.240741
+      }
+    },
+    {
+      "id": "exec_negative_open_01",
+      "query": "Mở cái đó lên",
+      "exact_hits": [],
+      "best_match": {
+        "source": "v21_train239",
+        "source_id": "vdc_clarification_026",
+        "source_query": "Mở file đó lên",
+        "exact_normalized": false,
+        "sequence_ratio": 0.814815,
+        "char3_jaccard": 0.352941
+      }
+    }
+  ]
+}

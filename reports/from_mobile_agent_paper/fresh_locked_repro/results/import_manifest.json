@@ -1,0 +1,30 @@
+{
+  "imported_at": "2026-06-26 16:22:40",
+  "input_dir": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\fresh_test_locked_20260626_result",
+  "eval_path": "data\\eval\\vi_droidcall_fresh_test_locked_20260626.jsonl",
+  "eval_sha256": "051C811625F0D22925EA60868BDCE03A67B291E34976636306DB9BF8F13387B4",
+  "predictions": "results\\fresh_test_locked_20260626\\v8_hybrid_k5_predictions.jsonl",
+  "predictions_sha256": "A60FD6F891ECBB6D2C5A0176B9376F01B0DEAE664297784F3F095624548664DC",
+  "local_report": "results\\fresh_test_locked_20260626\\main_report.json",
+  "validation": {
+    "eval_count": 126,
+    "prediction_count": 126,
+    "complete": true,
+    "missing_ids": [],
+    "extra_ids": [],
+    "duplicate_ids": []
+  },
+  "backups": {
+    "v8_hybrid_k5_predictions.jsonl": "results\\fresh_test_locked_20260626\\v8_hybrid_k5_predictions.backup_20260626_162240.jsonl",
+    "main_report.json": "results\\fresh_test_locked_20260626\\main_report.backup_20260626_162240.json",
+    "RUN_SUMMARY.md": "results\\fresh_test_locked_20260626\\RUN_SUMMARY.backup_20260626_162240.md"
+  },
+  "metrics": {
+    "count": 126,
+    "tool_selection_accuracy": 0.746031746031746,
+    "schema_valid_rate": 0.9206349206349206,
+    "soft_argument_accuracy": 0.743801652892562,
+    "end_to_end_task_success": 0.5634920634920635,
+    "end_to_end_ci_95": "[0.476, 0.647]"
+  }
+}

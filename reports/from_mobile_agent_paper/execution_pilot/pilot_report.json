@@ -1,0 +1,264 @@
+{
+  "protocol_id": "vintent-execution-pilot-v1-20260627",
+  "protocol_sha256": "C67F00460A14E52DABC32C6EDAFBE5C0D8D17DBA5E90BD49231CBDE7FAC92794",
+  "started_or_updated_at": "2026-06-27T16:04:25",
+  "environment": {
+    "adb_serial": "RFCN700MRBF",
+    "manufacturer": "samsung",
+    "model": "SM-N981U1",
+    "device": "c1q",
+    "android_version": "13",
+    "sdk": "33",
+    "build_fingerprint": "samsung/c1quew/c1q:13/TP1A.220624.014/N981U1UESEHYH2:user/release-keys",
+    "app_package": "com.vintent.app",
+    "app_version_name": "1.0",
+    "app_version_code": 1,
+    "model_path": "/sdcard/Android/data/com.vintent.app/files/vidroidcall_v21_q4km.gguf",
+    "model_stat_size_mtime": "986048160 1781099826",
+    "retriever_top_k": 2
+  },
+  "model_preparation": {
+    "run_id": 548156,
+    "result_line": "06-27 15:16:18.377 18227 18227 I VINTENT_BENCH: BENCH_RESULT run=548156 ttft_ms=17361 tps=1.0 tool=null ok=false warmup=true",
+    "prepared_at": "2026-06-27T15:16:19"
+  },
+  "summary": {
+    "planned_tasks": 22,
+    "completed_tasks": 7,
+    "complete": false,
+    "full_execution_successes": 3,
+    "execution_accuracy": 0.42857142857142855,
+    "execution_accuracy_wilson_95": [
+      0.15821692226262685,
+      0.7495457695909742
+    ],
+    "prediction_successes": 4,
+    "prediction_accuracy": 0.5714285714285714,
+    "supported_tasks": 7,
+    "activity_launch_successes": 5,
+    "activity_launch_rate": 0.7142857142857143,
+    "semantic_successes": 3,
+    "semantic_success_rate": 0.42857142857142855,
+    "negative_tasks": 0,
+    "negative_safety_successes": 0,
+    "negative_safety_rate": 0.0,
+    "per_group": {
+      "alarm_calendar": {
+        "n": 1,
+        "successes": 0,
+        "execution_accuracy": 0.0
+      },
+      "contact_call": {
+        "n": 2,
+        "successes": 1,
+        "execution_accuracy": 0.5
+      },
+      "map_web_camera": {
+        "n": 2,
+        "successes": 1,
+        "execution_accuracy": 0.5
+      },
+      "message_email": {
+        "n": 2,
+        "successes": 1,
+        "execution_accuracy": 0.5
+      }
+    }
+  },
+  "records": [
+    {
+      "id": "exec_dial_01",
+      "group": "contact_call",
+      "query": "Mở bàn phím gọi số 0900000123",
+      "expected": {
+        "tool": "dial",
+        "arguments": {
+          "phone_number": "0900000123"
+        },
+        "requires_confirmation": true
+      },
+      "predicted_tool_observed": "dial",
+      "predicted_status_observed": null,
+      "prediction_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_dial_01_prediction.png",
+      "prediction_foreground_activity": "com.vintent.app/.MainActivity",
+      "adjudicated_at": "2026-06-27T15:18:41",
+      "tool_correct": true,
+      "arguments_correct": true,
+      "confirmation_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_dial_01_confirmation.png",
+      "confirmation_correct": true,
+      "target_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_dial_01_target.png",
+      "target_foreground_activity": "com.samsung.android.dialer/.DialtactsActivity",
+      "launch_success": true,
+      "semantic_success": true,
+      "notes": "",
+      "full_execution_success": true
+    },
+    {
+      "id": "exec_sms_01",
+      "group": "message_email",
+      "query": "Soạn tin nhắn cho 0900000123 với nội dung PILOT ONLY",
+      "expected": {
+        "tool": "send_message",
+        "arguments": {
+          "phone_number": "0900000123",
+          "subject": "",
+          "body": "PILOT ONLY"
+        },
+        "requires_confirmation": true
+      },
+      "predicted_tool_observed": "send_message",
+      "predicted_status_observed": null,
+      "prediction_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_sms_01_prediction.png",
+      "prediction_foreground_activity": "com.vintent.app/.MainActivity",
+      "adjudicated_at": "2026-06-27T15:27:15",
+      "tool_correct": true,
+      "arguments_correct": true,
+      "confirmation_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_sms_01_confirmation.png",
+      "confirmation_correct": true,
+      "target_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_sms_01_target.png",
+      "target_foreground_activity": "com.samsung.android.messaging/.ui.view.main.WithActivity",
+      "launch_success": true,
+      "semantic_success": true,
+      "notes": "",
+      "full_execution_success": true
+    },
+    {
+      "id": "exec_email_01",
+      "group": "message_email",
+      "query": "Soạn email cho pilot@example.com tiêu đề PILOT nội dung KHONG GUI",
+      "expected": {
+        "tool": "send_email",
+        "arguments": {
+          "to": [
+            "pilot@example.com"
+          ],
+          "subject": "PILOT",
+          "body": "KHONG GUI"
+        },
+        "requires_confirmation": true
+      },
+      "predicted_tool_observed": "send_email",
+      "predicted_status_observed": null,
+      "prediction_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_email_01_prediction.png",
+      "prediction_foreground_activity": "com.vintent.app/.MainActivity",
+      "adjudicated_at": "2026-06-27T15:36:04",
+      "tool_correct": true,
+      "arguments_correct": false,
+      "confirmation_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_email_01_confirmation.png",
+      "confirmation_correct": true,
+      "target_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_email_01_target.png",
+      "target_foreground_activity": "com.google.android.gm/.ComposeActivityGmailExternal",
+      "launch_success": true,
+      "semantic_success": false,
+      "notes": "Model omitted subject; Gmail opened with body only, recipient and subject blank.",
+      "full_execution_success": false
+    },
+    {
+      "id": "exec_contact_insert_01",
+      "group": "contact_call",
+      "query": "Tạo liên hệ thử nghiệm tên Pilot Test số 0900000123",
+      "expected": {
+        "tool": "ACTION_INSERT_CONTACT",
+        "arguments": {
+          "contact_info": {
+            "name": "Pilot Test",
+            "phone": "0900000123"
+          }
+        },
+        "requires_confirmation": true
+      },
+      "predicted_tool_observed": "ACTION_INSERT_CONTACT",
+      "predicted_status_observed": null,
+      "prediction_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_contact_insert_01_prediction.png",
+      "prediction_foreground_activity": "com.vintent.app/.MainActivity",
+      "adjudicated_at": "2026-06-27T15:40:57",
+      "tool_correct": true,
+      "arguments_correct": true,
+      "confirmation_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_contact_insert_01_confirmation.png",
+      "confirmation_correct": true,
+      "target_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_contact_insert_01_target.png",
+      "target_foreground_activity": "com.samsung.android.app.contacts/com.samsung.android.contacts.editor.ContactEditorActivity",
+      "launch_success": true,
+      "semantic_success": false,
+      "notes": "Contact editor launched, but name and phone fields were empty; supplementary fields screenshot captured.",
+      "full_execution_success": false
+    },
+    {
+      "id": "exec_event_insert_01",
+      "group": "alarm_calendar",
+      "query": "Tạo lịch PILOT REVIEW lúc 9 giờ ngày 30 tháng 12 năm 2026 tại Phòng Test",
+      "expected": {
+        "tool": "ACTION_INSERT_EVENT",
+        "arguments": {
+          "TITLE": "PILOT REVIEW",
+          "DESCRIPTION": "PILOT REVIEW",
+          "EVENT_LOCATION": "Phòng Test",
+          "EXTRA_EVENT_BEGIN_TIME": "2026-12-30T09:00:00"
+        },
+        "requires_confirmation": true
+      },
+      "predicted_tool_observed": "ACTION_CREATE_DOCUMENT",
+      "predicted_status_observed": null,
+      "prediction_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_event_insert_01_prediction.png",
+      "prediction_foreground_activity": "com.vintent.app/.MainActivity",
+      "adjudicated_at": "2026-06-27T15:50:24",
+      "tool_correct": false,
+      "arguments_correct": false,
+      "confirmation_correct": false,
+      "launch_success": false,
+      "semantic_success": false,
+      "notes": "Correct locked query entered; model predicted ACTION_CREATE_DOCUMENT instead of ACTION_INSERT_EVENT. No execution attempted.",
+      "full_execution_success": false
+    },
+    {
+      "id": "exec_map_nearby_01",
+      "group": "map_web_camera",
+      "query": "Tìm hiệu thuốc gần đây trên bản đồ",
+      "expected": {
+        "tool": "search_location",
+        "arguments": {
+          "query": "hiệu thuốc gần đây"
+        },
+        "requires_confirmation": false
+      },
+      "predicted_tool_observed": "search_location",
+      "predicted_status_observed": null,
+      "prediction_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_map_nearby_01_prediction.png",
+      "prediction_foreground_activity": "com.vintent.app/.MainActivity",
+      "adjudicated_at": "2026-06-27T15:52:59",
+      "tool_correct": true,
+      "arguments_correct": true,
+      "confirmation_correct": true,
+      "target_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_map_nearby_01_target.png",
+      "target_foreground_activity": "com.google.android.apps.maps/com.google.android.maps.MapsActivity",
+      "launch_success": true,
+      "semantic_success": true,
+      "notes": "",
+      "full_execution_success": true
+    },
+    {
+      "id": "exec_map_route_01",
+      "group": "map_web_camera",
+      "query": "Chỉ đường đến Bệnh viện Chợ Rẫy",
+      "expected": {
+        "tool": "search_location",
+        "arguments": {
+          "query": "Bệnh viện Chợ Rẫy"
+        },
+        "requires_confirmation": false
+      },
+      "predicted_tool_observed": null,
+      "predicted_status_observed": "unsupported",
+      "prediction_screenshot": "D:\\OneDrive - DH Cong nghe thong tin & Truyen Thong\\mobile_agent_paper\\prototype\\results\\execution_pilot_v1_20260627\\evidence\\exec_map_route_01_prediction.png",
+      "prediction_foreground_activity": "com.vintent.app/.MainActivity",
+      "adjudicated_at": "2026-06-27T16:03:40",
+      "tool_correct": false,
+      "arguments_correct": false,
+      "confirmation_correct": false,
+      "launch_success": false,
+      "semantic_success": false,
+      "notes": "Exact locked query; model returned null/unsupported and Execute remained disabled. No external launch.",
+      "full_execution_success": false
+    }
+  ]
+}

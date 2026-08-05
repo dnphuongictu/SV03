@@ -1,0 +1,502 @@
+[
+  {
+    "name": "ACTION_CREATE_DOCUMENT",
+    "description_vi": "Tạo tài liệu mới và cho người dùng chọn nơi lưu.",
+    "description_en": "Create a new document and let the user choose where to save it.",
+    "risk": "low",
+    "confirmation": false,
+    "android_action": "android.intent.action.CREATE_DOCUMENT",
+    "arguments": {
+      "mime_type": {
+        "type": "string",
+        "required": true
+      },
+      "initial_name": {
+        "type": "string",
+        "required": true
+      }
+    }
+  },
+  {
+    "name": "ACTION_EDIT_CONTACT",
+    "description_vi": "Mở giao diện sửa một liên hệ đã biết.",
+    "description_en": "Edit a known contact.",
+    "risk": "medium",
+    "confirmation": true,
+    "android_action": "android.intent.action.EDIT",
+    "arguments": {
+      "contact_uri": {
+        "type": "string",
+        "required": true
+      },
+      "contact_info": {
+        "type": "object",
+        "required": false,
+        "default": null
+      }
+    }
+  },
+  {
+    "name": "ACTION_GET_CONTENT",
+    "description_vi": "Chọn một hoặc nhiều tệp theo kiểu MIME để sử dụng tạm thời.",
+    "description_en": "Select one or more files of a MIME type for temporary access.",
+    "risk": "low",
+    "confirmation": false,
+    "android_action": "android.intent.action.GET_CONTENT",
+    "arguments": {
+      "mime_type": {
+        "type": "string",
+        "required": true
+      },
+      "allow_multiple": {
+        "type": "boolean",
+        "required": false,
+        "default": false
+      }
+    }
+  },
+  {
+    "name": "ACTION_GET_RINGTONE",
+    "description_vi": "Mở bộ chọn nhạc chuông và trả về URI đã chọn.",
+    "description_en": "Open the ringtone picker and return the selected URI.",
+    "risk": "low",
+    "confirmation": false,
+    "android_action": "android.intent.action.RINGTONE_PICKER",
+    "arguments": {}
+  },
+  {
+    "name": "ACTION_IMAGE_CAPTURE",
+    "description_vi": "Chụp một ảnh và trả về URI của ảnh.",
+    "description_en": "Capture a photo and return its URI.",
+    "risk": "medium",
+    "confirmation": false,
+    "android_action": "android.media.action.IMAGE_CAPTURE",
+    "arguments": {}
+  },
+  {
+    "name": "ACTION_INSERT_CONTACT",
+    "description_vi": "Tạo liên hệ mới với thông tin điền sẵn.",
+    "description_en": "Create a new contact with prefilled information.",
+    "risk": "medium",
+    "confirmation": true,
+    "android_action": "android.intent.action.INSERT",
+    "arguments": {
+      "contact_info": {
+        "type": "object",
+        "required": true,
+        "properties": [
+          "name",
+          "phone",
+          "email",
+          "company",
+          "address"
+        ]
+      }
+    }
+  },
+  {
+    "name": "ACTION_INSERT_EVENT",
+    "description_vi": "Thêm sự kiện mới vào lịch.",
+    "description_en": "Insert a new calendar event.",
+    "risk": "medium",
+    "confirmation": true,
+    "android_action": "android.intent.action.INSERT",
+    "arguments": {
+      "TITLE": {
+        "type": "string",
+        "required": true
+      },
+      "DESCRIPTION": {
+        "type": "string",
+        "required": true
+      },
+      "EVENT_LOCATION": {
+        "type": "string",
+        "required": false,
+        "default": null
+      },
+      "EXTRA_EVENT_ALL_DAY": {
+        "type": "boolean",
+        "required": false,
+        "default": false
+      },
+      "EXTRA_EVENT_BEGIN_TIME": {
+        "type": "string",
+        "required": false,
+        "default": null
+      },
+      "EXTRA_EVENT_END_TIME": {
+        "type": "string",
+        "required": false,
+        "default": null
+      },
+      "EXTRA_EMAIL": {
+        "type": "array",
+        "items": "string",
+        "required": false,
+        "default": null
+      }
+    }
+  },
+  {
+    "name": "ACTION_OPEN_DOCUMENT",
+    "description_vi": "Mở một hoặc nhiều tài liệu và duy trì quyền truy cập lâu dài.",
+    "description_en": "Open documents with persistent access.",
+    "risk": "low",
+    "confirmation": false,
+    "android_action": "android.intent.action.OPEN_DOCUMENT",
+    "arguments": {
+      "mime_types": {
+        "type": "array",
+        "items": "string",
+        "required": true
+      },
+      "allow_multiple": {
+        "type": "boolean",
+        "required": false,
+        "default": false
+      }
+    }
+  },
+  {
+    "name": "ACTION_PICK",
+    "description_vi": "Cho người dùng chọn liên hệ, số điện thoại, email hoặc địa chỉ.",
+    "description_en": "Pick a contact or a contact field.",
+    "risk": "low",
+    "confirmation": false,
+    "android_action": "android.intent.action.PICK",
+    "arguments": {
+      "data_type": {
+        "type": "string",
+        "enum": [
+          "ALL",
+          "PHONE",
+          "EMAIL",
+          "ADDRESS"
+        ],
+        "required": false,
+        "default": "ALL"
+      }
+    }
+  },
+  {
+    "name": "ACTION_SET_ALARM",
+    "description_vi": "Đặt báo thức theo giờ, phút, nhãn và ngày lặp.",
+    "description_en": "Set an alarm with time, label and repeat days.",
+    "risk": "medium",
+    "confirmation": false,
+    "android_action": "android.intent.action.SET_ALARM",
+    "arguments": {
+      "EXTRA_HOUR": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 23,
+        "required": true
+      },
+      "EXTRA_MINUTES": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 59,
+        "required": true
+      },
+      "EXTRA_MESSAGE": {
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      "EXTRA_DAYS": {
+        "type": "array",
+        "items": "string",
+        "required": false,
+        "default": null
+      },
+      "EXTRA_RINGTONE": {
+        "type": "string",
+        "required": false,
+        "default": null
+      },
+      "EXTRA_VIBRATE": {
+        "type": "boolean",
+        "required": false,
+        "default": false
+      },
+      "EXTRA_SKIP_UI": {
+        "type": "boolean",
+        "required": false,
+        "default": true
+      }
+    }
+  },
+  {
+    "name": "ACTION_SET_TIMER",
+    "description_vi": "Đặt bộ đếm ngược theo khoảng thời gian.",
+    "description_en": "Set a countdown timer.",
+    "risk": "low",
+    "confirmation": false,
+    "android_action": "android.intent.action.SET_TIMER",
+    "arguments": {
+      "duration": {
+        "type": "string",
+        "required": true
+      },
+      "EXTRA_MESSAGE": {
+        "type": "string",
+        "required": false,
+        "default": ""
+      },
+      "EXTRA_SKIP_UI": {
+        "type": "boolean",
+        "required": false,
+        "default": true
+      }
+    }
+  },
+  {
+    "name": "ACTION_SHOW_ALARMS",
+    "description_vi": "Hiển thị danh sách báo thức hiện có.",
+    "description_en": "Show existing alarms.",
+    "risk": "low",
+    "confirmation": false,
+    "android_action": "android.intent.action.SHOW_ALARMS",
+    "arguments": {}
+  },
+  {
+    "name": "ACTION_VIDEO_CAPTURE",
+    "description_vi": "Quay video và trả về URI của video.",
+    "description_en": "Capture a video and return its URI.",
+    "risk": "medium",
+    "confirmation": false,
+    "android_action": "android.media.action.VIDEO_CAPTURE",
+    "arguments": {}
+  },
+  {
+    "name": "ACTION_VIEW_CONTACT",
+    "description_vi": "Hiển thị chi tiết của một liên hệ theo URI.",
+    "description_en": "View a contact by URI.",
+    "risk": "low",
+    "confirmation": false,
+    "android_action": "android.intent.action.VIEW",
+    "arguments": {
+      "contact_uri": {
+        "type": "string",
+        "required": true
+      }
+    }
+  },
+  {
+    "name": "INTENT_ACTION_STILL_IMAGE_CAMERA",
+    "description_vi": "Mở máy ảnh ở chế độ chụp ảnh, chưa chụp ngay.",
+    "description_en": "Open the camera in still-image mode without capturing immediately.",
+    "risk": "low",
+    "confirmation": false,
+    "android_action": "android.media.action.STILL_IMAGE_CAMERA",
+    "arguments": {}
+  },
+  {
+    "name": "INTENT_ACTION_VIDEO_CAMERA",
+    "description_vi": "Mở máy ảnh ở chế độ quay video, chưa quay ngay.",
+    "description_en": "Open the camera in video mode without recording immediately.",
+    "risk": "low",
+    "confirmation": false,
+    "android_action": "android.media.action.VIDEO_CAMERA",
+    "arguments": {}
+  },
+  {
+    "name": "dial",
+    "description_vi": "Mở trình quay số với số điện thoại điền sẵn; người dùng xác nhận gọi.",
+    "description_en": "Open the dialer with a prefilled phone number.",
+    "risk": "high",
+    "confirmation": true,
+    "android_action": "android.intent.action.DIAL",
+    "arguments": {
+      "phone_number": {
+        "type": "string",
+        "required": true
+      }
+    }
+  },
+  {
+    "name": "get_contact_info",
+    "description_vi": "Tra cứu email, số điện thoại, địa chỉ hoặc URI theo tên liên hệ.",
+    "description_en": "Get contact information by contact name.",
+    "risk": "medium",
+    "confirmation": false,
+    "android_action": "content_query",
+    "arguments": {
+      "name": {
+        "type": "string",
+        "required": true
+      },
+      "key": {
+        "type": "string",
+        "enum": [
+          "email",
+          "phone",
+          "address",
+          "uri"
+        ],
+        "required": true
+      }
+    }
+  },
+  {
+    "name": "get_contact_info_from_uri",
+    "description_vi": "Tra cứu email, số điện thoại hoặc địa chỉ theo URI liên hệ.",
+    "description_en": "Get contact information from a contact URI.",
+    "risk": "medium",
+    "confirmation": false,
+    "android_action": "content_query",
+    "arguments": {
+      "contact_uri": {
+        "type": "string",
+        "required": true
+      },
+      "key": {
+        "type": "string",
+        "enum": [
+          "email",
+          "phone",
+          "address"
+        ],
+        "required": true
+      }
+    }
+  },
+  {
+    "name": "open_settings",
+    "description_vi": "Mở màn hình cài đặt hệ thống được yêu cầu.",
+    "description_en": "Open a requested system settings screen.",
+    "risk": "low",
+    "confirmation": false,
+    "android_action": "android.settings.*",
+    "arguments": {
+      "setting_type": {
+        "type": "string",
+        "enum": [
+          "general",
+          "wireless",
+          "airplane_mode",
+          "wifi",
+          "apn",
+          "bluetooth",
+          "date",
+          "locale",
+          "input_method",
+          "display",
+          "security",
+          "location",
+          "internal_storage",
+          "memory_card"
+        ],
+        "required": false,
+        "default": "general"
+      }
+    }
+  },
+  {
+    "name": "search_location",
+    "description_vi": "Tìm một địa điểm hoặc địa chỉ trong ứng dụng bản đồ.",
+    "description_en": "Search for a location in a map application.",
+    "risk": "low",
+    "confirmation": false,
+    "android_action": "android.intent.action.VIEW",
+    "arguments": {
+      "query": {
+        "type": "string",
+        "required": true
+      }
+    }
+  },
+  {
+    "name": "send_email",
+    "description_vi": "Soạn email với người nhận, tiêu đề, nội dung và tệp đính kèm.",
+    "description_en": "Compose an email with recipients, subject, body and attachments.",
+    "risk": "high",
+    "confirmation": true,
+    "android_action": "android.intent.action.SENDTO",
+    "arguments": {
+      "to": {
+        "type": "array",
+        "items": "string",
+        "required": true
+      },
+      "subject": {
+        "type": "string",
+        "required": true
+      },
+      "body": {
+        "type": "string",
+        "required": true
+      },
+      "cc": {
+        "type": "array",
+        "items": "string",
+        "required": false,
+        "default": null
+      },
+      "bcc": {
+        "type": "array",
+        "items": "string",
+        "required": false,
+        "default": null
+      },
+      "attachments": {
+        "type": "array",
+        "items": "string",
+        "required": false,
+        "default": null
+      }
+    }
+  },
+  {
+    "name": "send_message",
+    "description_vi": "Soạn tin nhắn tới một số điện thoại, có thể kèm tệp.",
+    "description_en": "Compose a message to a phone number with optional attachments.",
+    "risk": "high",
+    "confirmation": true,
+    "android_action": "android.intent.action.SENDTO",
+    "arguments": {
+      "phone_number": {
+        "type": "string",
+        "required": true
+      },
+      "subject": {
+        "type": "string",
+        "required": false
+      },
+      "body": {
+        "type": "string",
+        "required": true
+      },
+      "attachments": {
+        "type": "array",
+        "items": "string",
+        "required": false,
+        "default": null
+      }
+    }
+  },
+  {
+    "name": "web_search",
+    "description_vi": "Tìm kiếm từ khóa trên web bằng công cụ tìm kiếm.",
+    "description_en": "Search the web using a search engine.",
+    "risk": "low",
+    "confirmation": false,
+    "android_action": "android.intent.action.WEB_SEARCH",
+    "arguments": {
+      "query": {
+        "type": "string",
+        "required": true
+      },
+      "engine": {
+        "type": "string",
+        "enum": [
+          "baidu",
+          "google"
+        ],
+        "required": false,
+        "default": "google"
+      }
+    }
+  }
+]

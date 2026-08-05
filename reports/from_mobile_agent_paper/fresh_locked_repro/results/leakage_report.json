@@ -1,0 +1,1197 @@
+{
+  "date": "2026-06-26",
+  "fresh_test_path": "data\\eval\\vi_droidcall_fresh_test_locked_20260626.jsonl",
+  "ledger_path": "data\\eval\\vi_droidcall_fresh_test_locked_20260626_ledger.csv",
+  "reference_files": [
+    "codeswitch_queries.jsonl",
+    "noisy_smoke_heavy.jsonl",
+    "noisy_smoke_light.jsonl",
+    "noisy_smoke_medium.jsonl",
+    "vi_droidcall_external_test.jsonl",
+    "vi_droidcall_final48.jsonl",
+    "vi_droidcall_targeted_aug.jsonl",
+    "vi_droidcall_targeted_aug2.jsonl",
+    "vi_droidcall_targeted_aug2_clean.jsonl",
+    "vi_droidcall_targeted_aug3_external_robust.jsonl",
+    "vi_droidcall_targeted_aug4_v7.jsonl",
+    "vi_droidcall_targeted_aug5.jsonl",
+    "vi_droidcall_targeted_aug6.jsonl",
+    "vi_droidcall_targeted_aug_clean.jsonl",
+    "vi_droidcall_test60.jsonl",
+    "vi_droidcall_train191_final.jsonl",
+    "vi_droidcall_train239.jsonl",
+    "vi_droidcall_train329_v6_external_robust.jsonl",
+    "vi_droidcall_train366_v7.jsonl",
+    "vi_droidcall_train408_v8.jsonl",
+    "vi_droidcall_train444_v9.jsonl",
+    "vi_droidcall_train_robust.jsonl",
+    "vi_droidcall_v1.jsonl",
+    "vi_smoke_test.jsonl",
+    "vi_smoke_test_16.jsonl"
+  ],
+  "fresh_count": 126,
+  "reference_count": 4144,
+  "exact_overlap_count": 0,
+  "exact_overlaps": [],
+  "high_sequence_threshold": 0.9,
+  "high_sequence_count": 0,
+  "high_sequence_matches": [],
+  "high_ngram_threshold": 0.7,
+  "high_ngram_count": 0,
+  "high_ngram_matches": [],
+  "max_sequence_match": {
+    "fresh_id": "fresh20260626_007",
+    "fresh_query": "Sửa thông tin danh bạ ở content://com.android.contacts/contacts/214",
+    "reference_file": "vi_droidcall_v1.jsonl",
+    "reference_id": "vdc_edit_contact_001",
+    "reference_query": "Sửa thông tin liên hệ content://com.android.contacts/contacts/1",
+    "sequence_ratio": 0.8923,
+    "ngram_jaccard": 0.6308
+  },
+  "max_ngram_match": {
+    "fresh_id": "fresh20260626_121",
+    "fresh_query": "Kết nối với tai nghe Bluetooth của tôi",
+    "reference_file": "vi_droidcall_external_test.jsonl",
+    "reference_id": "ext_neg_020",
+    "reference_query": "Kết nối tai nghe Bluetooth",
+    "sequence_ratio": 0.8125,
+    "ngram_jaccard": 0.6857
+  },
+  "all_top_matches": [
+    {
+      "fresh_id": "fresh20260626_007",
+      "fresh_query": "Sửa thông tin danh bạ ở content://com.android.contacts/contacts/214",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_edit_contact_001",
+      "reference_query": "Sửa thông tin liên hệ content://com.android.contacts/contacts/1",
+      "sequence_ratio": 0.8923,
+      "ngram_jaccard": 0.6308
+    },
+    {
+      "fresh_id": "fresh20260626_119",
+      "fresh_query": "Chụp màn hình trang này",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_neg_015",
+      "reference_query": "Chụp màn hình ngay",
+      "sequence_ratio": 0.878,
+      "ngram_jaccard": 0.48
+    },
+    {
+      "fresh_id": "fresh20260626_042",
+      "fresh_query": "Đếm ngược 90 giây",
+      "reference_file": "vi_droidcall_targeted_aug3_external_robust.jsonl",
+      "reference_id": "aug3_timer_001",
+      "reference_query": "Đếm ngược đúng 90 giây",
+      "sequence_ratio": 0.8718,
+      "ngram_jaccard": 0.6667
+    },
+    {
+      "fresh_id": "fresh20260626_025",
+      "fresh_query": "Thêm lịch demo sản phẩm thứ Năm 14:15 tại phòng C4",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug3_event_001",
+      "reference_query": "Thêm lịch demo sản phẩm thứ Năm lúc 14:30 ở phòng C1",
+      "sequence_ratio": 0.8627,
+      "ngram_jaccard": 0.6316
+    },
+    {
+      "fresh_id": "fresh20260626_055",
+      "fresh_query": "Mở profile contact content://com.android.contacts/contacts/512",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_editcontact_004",
+      "reference_query": "Mở form sửa contact content://com.android.contacts/contacts/7",
+      "sequence_ratio": 0.8618,
+      "ngram_jaccard": 0.5818
+    },
+    {
+      "fresh_id": "fresh20260626_063",
+      "fresh_query": "Vào chế độ quay video trong app camera",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_camvid_005",
+      "reference_query": "Mở chế độ quay video trên camera",
+      "sequence_ratio": 0.8571,
+      "ngram_jaccard": 0.6098
+    },
+    {
+      "fresh_id": "fresh20260626_099",
+      "fresh_query": "Gửi email báo cáo đi",
+      "reference_file": "noisy_smoke_light.jsonl",
+      "reference_id": "email_missing_01",
+      "reference_query": "Gửi email bao cáo giúp tôi",
+      "sequence_ratio": 0.8261,
+      "ngram_jaccard": 0.6
+    },
+    {
+      "fresh_id": "fresh20260626_048",
+      "fresh_query": "Có báo thức nào đang bật không, mở ra xem",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_showalarm_005",
+      "reference_query": "Có báo thức nào đang hoạt động không, cho tôi xem",
+      "sequence_ratio": 0.8222,
+      "ngram_jaccard": 0.4902
+    },
+    {
+      "fresh_id": "fresh20260626_102",
+      "fresh_query": "Mở tài liệu",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_open_doc_003",
+      "reference_query": "Mở tài liệu Word",
+      "sequence_ratio": 0.8148,
+      "ngram_jaccard": 0.6429
+    },
+    {
+      "fresh_id": "fresh20260626_121",
+      "fresh_query": "Kết nối với tai nghe Bluetooth của tôi",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_neg_020",
+      "reference_query": "Kết nối tai nghe Bluetooth",
+      "sequence_ratio": 0.8125,
+      "ngram_jaccard": 0.6857
+    },
+    {
+      "fresh_id": "fresh20260626_105",
+      "fresh_query": "Tra số trong danh bạ",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_clarification_014",
+      "reference_query": "Tìm trong danh bạ",
+      "sequence_ratio": 0.8108,
+      "ngram_jaccard": 0.5714
+    },
+    {
+      "fresh_id": "fresh20260626_071",
+      "fresh_query": "Tra địa chỉ của bác Tám trong danh bạ",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug4_contact_003_noisy_light",
+      "reference_query": "Lấy địa chỉ nhà của anh Tuấn trong danh bạ",
+      "sequence_ratio": 0.8101,
+      "ngram_jaccard": 0.449
+    },
+    {
+      "fresh_id": "fresh20260626_016",
+      "fresh_query": "Tôi cần chọn một âm thanh làm chuông điện thoại",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_ringtone_001",
+      "reference_query": "Mở trình chọn âm thanh chuông điện thoại",
+      "sequence_ratio": 0.8046,
+      "ngram_jaccard": 0.52
+    },
+    {
+      "fresh_id": "fresh20260626_032",
+      "fresh_query": "Mở tài liệu zip từ bộ nhớ lâu dài",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_opendoc_001",
+      "reference_query": "Mở tài liệu PDF từ bộ nhớ",
+      "sequence_ratio": 0.7931,
+      "ngram_jaccard": 0.5
+    },
+    {
+      "fresh_id": "fresh20260626_077",
+      "fresh_query": "Mở phần cài đặt bàn phím",
+      "reference_file": "vi_droidcall_targeted_aug3_external_robust.jsonl",
+      "reference_id": "aug3_settings_004",
+      "reference_query": "Vào phần cài đặt bảo mật",
+      "sequence_ratio": 0.7917,
+      "ngram_jaccard": 0.5769
+    },
+    {
+      "fresh_id": "fresh20260626_036",
+      "fresh_query": "Tôi cần chọn một liên hệ bất kỳ",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_pick_005",
+      "reference_query": "Tôi muốn chọn một liên hệ",
+      "sequence_ratio": 0.7857,
+      "ngram_jaccard": 0.5455
+    },
+    {
+      "fresh_id": "fresh20260626_108",
+      "fresh_query": "Tạo file mới",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_clarification_010",
+      "reference_query": "Tạo tệp mới",
+      "sequence_ratio": 0.7826,
+      "ngram_jaccard": 0.2667
+    },
+    {
+      "fresh_id": "fresh20260626_114",
+      "fresh_query": "Cài app ngân hàng mới",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug3_neg_014_noisy_light",
+      "reference_query": "Cài ứngdụng ngân hàng mới",
+      "sequence_ratio": 0.7826,
+      "ngram_jaccard": 0.5385
+    },
+    {
+      "fresh_id": "fresh20260626_013",
+      "fresh_query": "Vào màn hình chọn âm báo cuộc gọi",
+      "reference_file": "vi_droidcall_targeted_aug3_external_robust.jsonl",
+      "reference_id": "aug3_ringtone_001",
+      "reference_query": "Mở bộ chọn âm báo cuộc gọi",
+      "sequence_ratio": 0.7797,
+      "ngram_jaccard": 0.5588
+    },
+    {
+      "fresh_id": "fresh20260626_053",
+      "fresh_query": "Hiển thị hồ sơ content://contacts/people/802",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_viewcontact_002",
+      "reference_query": "Hiển thị chi tiết contact URI content://contacts/people/5",
+      "sequence_ratio": 0.7723,
+      "ngram_jaccard": 0.5455
+    },
+    {
+      "fresh_id": "fresh20260626_122",
+      "fresh_query": "Mở khóa điện thoại",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_neg_010",
+      "reference_query": "Dọn bộ nhớ điện thoại",
+      "sequence_ratio": 0.7692,
+      "ngram_jaccard": 0.36
+    },
+    {
+      "fresh_id": "fresh20260626_116",
+      "fresh_query": "Chuyển tiền cho Nam 200 nghìn",
+      "reference_file": "vi_droidcall_targeted_aug3_external_robust.jsonl",
+      "reference_id": "aug3_neg_010",
+      "reference_query": "Chuyển khoản cho Tuấn 300 nghìn",
+      "sequence_ratio": 0.7667,
+      "ngram_jaccard": 0.3846
+    },
+    {
+      "fresh_id": "fresh20260626_030",
+      "fresh_query": "Chọn nhiều tài liệu Word để xem",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug3_opendoc_002_noisy_light",
+      "reference_query": "Chọn nhiều tài liệu PDF để mở lâu dài",
+      "sequence_ratio": 0.7647,
+      "ngram_jaccard": 0.4286
+    },
+    {
+      "fresh_id": "fresh20260626_080",
+      "fresh_query": "Mở cài đặt thẻ nhớ",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_settings_003",
+      "reference_query": "Mở cài đặt chung",
+      "sequence_ratio": 0.7647,
+      "ngram_jaccard": 0.4286
+    },
+    {
+      "fresh_id": "fresh20260626_120",
+      "fresh_query": "Dọn rác bộ nhớ tự động",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug4_neg_014_noisy_light",
+      "reference_query": "Dọn dẹp bộ nhớ trong",
+      "sequence_ratio": 0.7619,
+      "ngram_jaccard": 0.3704
+    },
+    {
+      "fresh_id": "fresh20260626_035",
+      "fresh_query": "Mở bộ chọn địa chỉ trong danh bạ",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_pick_004",
+      "reference_query": "Mở bộ chọn địa chỉ liên hệ",
+      "sequence_ratio": 0.7586,
+      "ngram_jaccard": 0.4444
+    },
+    {
+      "fresh_id": "fresh20260626_076",
+      "fresh_query": "content://com.android.contacts/contacts/18 có email nào",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "vdc_view_contact_002_noisy_light",
+      "reference_query": "Mở liên hệcontent://com.android.contacts/contacts/5",
+      "sequence_ratio": 0.7547,
+      "ngram_jaccard": 0.5185
+    },
+    {
+      "fresh_id": "fresh20260626_113",
+      "fresh_query": "Xóa toàn bộ ảnh trong thư viện",
+      "reference_file": "vi_droidcall_targeted_aug3_external_robust.jsonl",
+      "reference_id": "aug3_neg_017",
+      "reference_query": "Xóa toàn bộ danh bạ trong máy",
+      "sequence_ratio": 0.7458,
+      "ngram_jaccard": 0.4595
+    },
+    {
+      "fresh_id": "fresh20260626_084",
+      "fresh_query": "Chỉ đường tới Ga Biên Hòa",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_location_002",
+      "reference_query": "Chỉ đường tới sân bay Nội Bài",
+      "sequence_ratio": 0.7407,
+      "ngram_jaccard": 0.3333
+    },
+    {
+      "fresh_id": "fresh20260626_010",
+      "fresh_query": "Lấy nhiều file PDF từ bộ nhớ để đính kèm",
+      "reference_file": "vi_droidcall_targeted_aug3_external_robust.jsonl",
+      "reference_id": "aug3_getcontent_002",
+      "reference_query": "Lấy nhiều ảnh để đính kèm",
+      "sequence_ratio": 0.7385,
+      "ngram_jaccard": 0.439
+    },
+    {
+      "fresh_id": "fresh20260626_033",
+      "fresh_query": "Mở danh bạ cho tôi chọn email",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_pick_002",
+      "reference_query": "Mở danh bạ để tôi chọn số điện thoại",
+      "sequence_ratio": 0.7385,
+      "ngram_jaccard": 0.4146
+    },
+    {
+      "fresh_id": "fresh20260626_081",
+      "fresh_query": "Tìm đường đến Bảo tàng Mỹ thuật Đà Nẵng",
+      "reference_file": "vi_droidcall_train191_final.jsonl",
+      "reference_id": "vdc_location_003",
+      "reference_query": "Tìm đường đến sân bay Đà Nẵng",
+      "sequence_ratio": 0.7353,
+      "ngram_jaccard": 0.4762
+    },
+    {
+      "fresh_id": "fresh20260626_044",
+      "fresh_query": "Đặt đồng hồ bấm ngược nửa tiếng",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_timer_001",
+      "reference_query": "Đặt đồng hồ đếm ngược 20 phút",
+      "sequence_ratio": 0.7333,
+      "ngram_jaccard": 0.4
+    },
+    {
+      "fresh_id": "fresh20260626_074",
+      "fresh_query": "Tra phone từ content://contacts/people/909",
+      "reference_file": "vi_droidcall_train444_v9.jsonl",
+      "reference_id": "aug5_editcontact_uri_002",
+      "reference_query": "Cập nhật contact URI content://contacts/people/8",
+      "sequence_ratio": 0.7333,
+      "ngram_jaccard": 0.434
+    },
+    {
+      "fresh_id": "fresh20260626_034",
+      "fresh_query": "Cho tôi chọn số điện thoại từ contact",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_getcontact_001",
+      "reference_query": "Cho tôi số điện thoại của anh Quân",
+      "sequence_ratio": 0.7324,
+      "ngram_jaccard": 0.4348
+    },
+    {
+      "fresh_id": "fresh20260626_021",
+      "fresh_query": "Thêm liên hệ mới tên Bùi Gia Hân số 0855123456",
+      "reference_file": "vi_droidcall_test60.jsonl",
+      "reference_id": "vdc_contact_insert_001",
+      "reference_query": "Thêm liên hệ Minh số 0912345678",
+      "sequence_ratio": 0.7273,
+      "ngram_jaccard": 0.3585
+    },
+    {
+      "fresh_id": "fresh20260626_005",
+      "fresh_query": "Mở màn hình sửa liên hệ content://contacts/people/701",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_editcontact_002",
+      "reference_query": "Cập nhật danh bạ với URI content://contacts/people/12",
+      "sequence_ratio": 0.717,
+      "ngram_jaccard": 0.3288
+    },
+    {
+      "fresh_id": "fresh20260626_008",
+      "fresh_query": "Tôi muốn chỉnh contact contacts://family/me-hoa",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_editcontact_005",
+      "reference_query": "Tôi muốn cập nhật contact URI contacts://data/55",
+      "sequence_ratio": 0.7158,
+      "ngram_jaccard": 0.339
+    },
+    {
+      "fresh_id": "fresh20260626_020",
+      "fresh_query": "Chụp ảnh sản phẩm này ngay bây giờ",
+      "reference_file": "vi_droidcall_test60.jsonl",
+      "reference_id": "vdc_photo_003",
+      "reference_query": "Chụp hình ngay bây giờ",
+      "sequence_ratio": 0.7143,
+      "ngram_jaccard": 0.4
+    },
+    {
+      "fresh_id": "fresh20260626_070",
+      "fresh_query": "Số điện thoại bạn Quốc Huy là gì",
+      "reference_file": "vi_droidcall_train191_final.jsonl",
+      "reference_id": "vdc_contact_lookup_009",
+      "reference_query": "Số điện thoại của bạn Thu là bao nhiêu?",
+      "sequence_ratio": 0.7143,
+      "ngram_jaccard": 0.3778
+    },
+    {
+      "fresh_id": "fresh20260626_111",
+      "fresh_query": "Mở cài đặt mạng nào đó",
+      "reference_file": "vi_droidcall_targeted_aug.jsonl",
+      "reference_id": "aug_settings_001",
+      "reference_query": "Vào cài đặt màn hình",
+      "sequence_ratio": 0.7143,
+      "ngram_jaccard": 0.4615
+    },
+    {
+      "fresh_id": "fresh20260626_058",
+      "fresh_query": "Bật ứng dụng máy ảnh ở chế độ photo",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_camstill_001",
+      "reference_query": "Mở ứng dụng máy ảnh cho tôi",
+      "sequence_ratio": 0.7097,
+      "ngram_jaccard": 0.3846
+    },
+    {
+      "fresh_id": "fresh20260626_097",
+      "fresh_query": "Gọi giúp tôi",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "vdc_dial_004_noisy_light",
+      "reference_query": "Gọi0911002200 giúp tôi",
+      "sequence_ratio": 0.7059,
+      "ngram_jaccard": 0.3636
+    },
+    {
+      "fresh_id": "fresh20260626_125",
+      "fresh_query": "Biên dịch đoạn văn sang tiếng Nhật giùm tôi",
+      "reference_file": "vi_droidcall_targeted_aug.jsonl",
+      "reference_id": "aug_unsupported_translate_002",
+      "reference_query": "Dịch từ tiếng Việt sang tiếng Anh giúp tôi",
+      "sequence_ratio": 0.7059,
+      "ngram_jaccard": 0.2857
+    },
+    {
+      "fresh_id": "fresh20260626_101",
+      "fresh_query": "Tạo sự kiện họp",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_clarification_020",
+      "reference_query": "Tạo sự kiện quan trọng",
+      "sequence_ratio": 0.7027,
+      "ngram_jaccard": 0.4348
+    },
+    {
+      "fresh_id": "fresh20260626_078",
+      "fresh_query": "Vào mục ngày giờ của hệ thống",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug3_settings_001",
+      "reference_query": "Mở cài đặt ngày giờ của điện thoại",
+      "sequence_ratio": 0.6984,
+      "ngram_jaccard": 0.3182
+    },
+    {
+      "fresh_id": "fresh20260626_039",
+      "fresh_query": "Alarm 21h10 mỗi thứ Ba và thứ Sáu",
+      "reference_file": "vi_droidcall_targeted_aug5.jsonl",
+      "reference_id": "aug5_alarm_wed_002",
+      "reference_query": "Cài alarm 7 giờ thứ Hai và thứ Tư",
+      "sequence_ratio": 0.697,
+      "ngram_jaccard": 0.2222
+    },
+    {
+      "fresh_id": "fresh20260626_109",
+      "fresh_query": "Nhắc tôi việc quan trọng",
+      "reference_file": "vi_droidcall_final48.jsonl",
+      "reference_id": "vdc_clarification_020",
+      "reference_query": "Tạo sự kiện quan trọng",
+      "sequence_ratio": 0.6957,
+      "ngram_jaccard": 0.2727
+    },
+    {
+      "fresh_id": "fresh20260626_041",
+      "fresh_query": "Hẹn bộ đếm 7 phút cho trà",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "vdc_timer_009_noisy_medium",
+      "reference_query": "Hẹn giờ 2 phút đểpha trà",
+      "sequence_ratio": 0.6939,
+      "ngram_jaccard": 0.25
+    },
+    {
+      "fresh_id": "fresh20260626_059",
+      "fresh_query": "Vào camera để chuẩn bị chụp",
+      "reference_file": "vi_droidcall_train191_final.jsonl",
+      "reference_id": "vdc_camera_open_003",
+      "reference_query": "Mở camera để chụp hình",
+      "sequence_ratio": 0.6939,
+      "ngram_jaccard": 0.4828
+    },
+    {
+      "fresh_id": "fresh20260626_004",
+      "fresh_query": "Cho tôi tạo file PDF mới tên phieu_thu_07.pdf",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug3_createdoc_003_noisy_medium",
+      "reference_query": "Tạo file PDF mới tên De_cuong.pdf",
+      "sequence_ratio": 0.6923,
+      "ngram_jaccard": 0.4
+    },
+    {
+      "fresh_id": "fresh20260626_045",
+      "fresh_query": "Xem các chuông báo đã tạo",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug3_showalarm_001_noisy_light",
+      "reference_query": "Mở danh sách chuông báo đã lưu",
+      "sequence_ratio": 0.6909,
+      "ngram_jaccard": 0.3611
+    },
+    {
+      "fresh_id": "fresh20260626_054",
+      "fresh_query": "Xem chi tiết liên hệ contacts://office/accountant",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_viewcontact_001",
+      "reference_query": "Xem thông tin liên hệ contacts://id/10",
+      "sequence_ratio": 0.6897,
+      "ngram_jaccard": 0.3443
+    },
+    {
+      "fresh_id": "fresh20260626_040",
+      "fresh_query": "Báo tôi lúc 0 giờ 15 để kiểm tra server",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug3_alarm_002_noisy_light",
+      "reference_query": "Báo thức lúc 21 giờ 45 nhắc kiểm tra cửa",
+      "sequence_ratio": 0.6835,
+      "ngram_jaccard": 0.2982
+    },
+    {
+      "fresh_id": "fresh20260626_106",
+      "fresh_query": "Sửa liên hệ của mẹ",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_getcontact_004",
+      "reference_query": "Lấy URI liên hệ của em Đức",
+      "sequence_ratio": 0.6818,
+      "ngram_jaccard": 0.3929
+    },
+    {
+      "fresh_id": "fresh20260626_043",
+      "fresh_query": "Timer 3 giờ 20 phút cho máy giặt",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug_timer_008",
+      "reference_query": "Timer 40 phút chạy bộ",
+      "sequence_ratio": 0.6792,
+      "ngram_jaccard": 0.3333
+    },
+    {
+      "fresh_id": "fresh20260626_057",
+      "fresh_query": "Mở camera chụp ảnh, tôi tự bấm sau",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_camstill_002",
+      "reference_query": "Bật camera lên, tôi tự chụp sau",
+      "sequence_ratio": 0.6769,
+      "ngram_jaccard": 0.439
+    },
+    {
+      "fresh_id": "fresh20260626_037",
+      "fresh_query": "Cài chuông 4 giờ 50 sáng nhắc ra sân bay",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug_alarm_004_noisy_medium",
+      "reference_query": "Hẹn chuông 8 giờ sáng nhãn gặp bác sĩ",
+      "sequence_ratio": 0.6753,
+      "ngram_jaccard": 0.3529
+    },
+    {
+      "fresh_id": "fresh20260626_017",
+      "fresh_query": "Chụp ngay một ảnh biên nhận và trả về file",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_imgcap_003",
+      "reference_query": "Chụp ảnh và trả về file ảnh",
+      "sequence_ratio": 0.6667,
+      "ngram_jaccard": 0.4318
+    },
+    {
+      "fresh_id": "fresh20260626_029",
+      "fresh_query": "Mở một file csv đã lưu trong máy",
+      "reference_file": "vi_droidcall_targeted_aug4_v7.jsonl",
+      "reference_id": "aug4_neg_015",
+      "reference_query": "Xóa file rác trong máy",
+      "sequence_ratio": 0.6667,
+      "ngram_jaccard": 0.3158
+    },
+    {
+      "fresh_id": "fresh20260626_031",
+      "fresh_query": "Tôi muốn mở ảnh định dạng webp",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_camstill_005",
+      "reference_query": "Tôi muốn mở máy ảnh để chụp",
+      "sequence_ratio": 0.6667,
+      "ngram_jaccard": 0.3784
+    },
+    {
+      "fresh_id": "fresh20260626_051",
+      "fresh_query": "Bấm quay một đoạn video bây giờ",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_vidcap_002",
+      "reference_query": "Bấm record video ngay bây giờ",
+      "sequence_ratio": 0.6667,
+      "ngram_jaccard": 0.3171
+    },
+    {
+      "fresh_id": "fresh20260626_052",
+      "fresh_query": "Ghi hình nhanh rồi trả về file video",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_vidcap_003",
+      "reference_query": "Ghi hình ngay và lưu URI video",
+      "sequence_ratio": 0.6667,
+      "ngram_jaccard": 0.2449
+    },
+    {
+      "fresh_id": "fresh20260626_066",
+      "fresh_query": "Gọi tổng đài 1900 9095",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_dial_003",
+      "reference_query": "Gọi đến số tổng đài 1800 1234",
+      "sequence_ratio": 0.6667,
+      "ngram_jaccard": 0.3429
+    },
+    {
+      "fresh_id": "fresh20260626_093",
+      "fresh_query": "Tìm trên Google cách kiểm tra pin chai Android",
+      "reference_file": "noisy_smoke_light.jsonl",
+      "reference_id": "web_01",
+      "reference_query": "Tim trên Google cach cài Python trên Windows",
+      "sequence_ratio": 0.6667,
+      "ngram_jaccard": 0.339
+    },
+    {
+      "fresh_id": "fresh20260626_006",
+      "fresh_query": "Cập nhật contact URI contacts://team/linh-09 với email mới",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_editcontact_005",
+      "reference_query": "Tôi muốn cập nhật contact URI contacts://data/55",
+      "sequence_ratio": 0.6604,
+      "ngram_jaccard": 0.3846
+    },
+    {
+      "fresh_id": "fresh20260626_062",
+      "fresh_query": "Bật video camera để tôi tự record",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_camstill_002",
+      "reference_query": "Bật camera lên, tôi tự chụp sau",
+      "sequence_ratio": 0.6562,
+      "ngram_jaccard": 0.3111
+    },
+    {
+      "fresh_id": "fresh20260626_083",
+      "fresh_query": "Định vị quán bún cá Hạnh Nhiên gần đây",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_location_011",
+      "reference_query": "Tìm quán cà phê gần đây",
+      "sequence_ratio": 0.6557,
+      "ngram_jaccard": 0.2857
+    },
+    {
+      "fresh_id": "fresh20260626_009",
+      "fresh_query": "Chọn một ảnh để tôi gửi lên biểu mẫu",
+      "reference_file": "noisy_smoke_light.jsonl",
+      "reference_id": "file_01",
+      "reference_query": "Chọn một ảnh trong máy",
+      "sequence_ratio": 0.6552,
+      "ngram_jaccard": 0.2857
+    },
+    {
+      "fresh_id": "fresh20260626_073",
+      "fresh_query": "Từ contacts://supplier/77 lấy email",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_geturi_001",
+      "reference_query": "Từ URI contacts://123 lấy địa chỉ email",
+      "sequence_ratio": 0.6486,
+      "ngram_jaccard": 0.3462
+    },
+    {
+      "fresh_id": "fresh20260626_015",
+      "fresh_query": "Vào danh sách âm báo để chọn chuông mới",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_ringtone_004",
+      "reference_query": "Mở danh sách nhạc chuông để chọn",
+      "sequence_ratio": 0.6479,
+      "ngram_jaccard": 0.5
+    },
+    {
+      "fresh_id": "fresh20260626_072",
+      "fresh_query": "Cho tôi URI liên hệ của Trần Khánh Vy",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_getcontact_001",
+      "reference_query": "Cho tôi số điện thoại của anh Quân",
+      "sequence_ratio": 0.6479,
+      "ngram_jaccard": 0.2407
+    },
+    {
+      "fresh_id": "fresh20260626_012",
+      "fresh_query": "Chọn video bất kỳ cho phần upload",
+      "reference_file": "vi_droidcall_targeted_aug3_external_robust.jsonl",
+      "reference_id": "aug3_getcontent_003",
+      "reference_query": "Chọn file âm thanh bất kỳ để upload",
+      "sequence_ratio": 0.6471,
+      "ngram_jaccard": 0.3125
+    },
+    {
+      "fresh_id": "fresh20260626_065",
+      "fresh_query": "Quay số 090 455 6677 cho nhà xe",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_dial_004",
+      "reference_query": "Quay số 028 3823 4567 cho cửa hàng",
+      "sequence_ratio": 0.6462,
+      "ngram_jaccard": 0.2449
+    },
+    {
+      "fresh_id": "fresh20260626_038",
+      "fresh_query": "Đặt báo thức lúc 13:05 cho ca học chiều",
+      "reference_file": "vi_droidcall_train191_final.jsonl",
+      "reference_id": "vdc_clarification_001",
+      "reference_query": "Đặt báo thức cho tôi",
+      "sequence_ratio": 0.6441,
+      "ngram_jaccard": 0.4054
+    },
+    {
+      "fresh_id": "fresh20260626_110",
+      "fresh_query": "Tìm kiếm trên web",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_neg_007",
+      "reference_query": "Tìm kiếm",
+      "sequence_ratio": 0.64,
+      "ngram_jaccard": 0.4
+    },
+    {
+      "fresh_id": "fresh20260626_118",
+      "fresh_query": "Bật đèn pin",
+      "reference_file": "vi_droidcall_test60.jsonl",
+      "reference_id": "vdc_unsupported_010",
+      "reference_query": "Tắt điện thoại",
+      "sequence_ratio": 0.64,
+      "ngram_jaccard": 0.1667
+    },
+    {
+      "fresh_id": "fresh20260626_060",
+      "fresh_query": "Khởi động máy ảnh nhưng đừng chụp ngay",
+      "reference_file": "vi_droidcall_targeted_aug5.jsonl",
+      "reference_id": "aug5_camstill_002",
+      "reference_query": "Khởi động camera để chụp ảnh",
+      "sequence_ratio": 0.6364,
+      "ngram_jaccard": 0.3409
+    },
+    {
+      "fresh_id": "fresh20260626_082",
+      "fresh_query": "Mở bản đồ tìm 42 Trần Phú, Nha Trang",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug_timer_004_noisy_light",
+      "reference_query": "Tạo bộ đếm 2 phút đánh răng",
+      "sequence_ratio": 0.6349,
+      "ngram_jaccard": 0.102
+    },
+    {
+      "fresh_id": "fresh20260626_018",
+      "fresh_query": "Bấm chụp hình tức thì giúp tôi",
+      "reference_file": "vi_droidcall_targeted_aug4_v7.jsonl",
+      "reference_id": "aug4_neg_001",
+      "reference_query": "Chụp màn hình cho tôi",
+      "sequence_ratio": 0.6275,
+      "ngram_jaccard": 0.2778
+    },
+    {
+      "fresh_id": "fresh20260626_091",
+      "fresh_query": "Gửi tin cho 0914 222 888 rằng tối nay đổi sang 8h",
+      "reference_file": "vi_droidcall_test60.jsonl",
+      "reference_id": "vdc_sms_011",
+      "reference_query": "Nhắn tin cho 0978654321 rằng họp bị dời sang chiều",
+      "sequence_ratio": 0.6263,
+      "ngram_jaccard": 0.2714
+    },
+    {
+      "fresh_id": "fresh20260626_047",
+      "fresh_query": "Mở trang quản lý báo thức",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_show_alarms_003",
+      "reference_query": "Hiện tất cả báo thức",
+      "sequence_ratio": 0.6222,
+      "ngram_jaccard": 0.2121
+    },
+    {
+      "fresh_id": "fresh20260626_115",
+      "fresh_query": "Đọc mã OTP trong SMS",
+      "reference_file": "noisy_smoke_heavy.jsonl",
+      "reference_id": "file_01",
+      "reference_query": "Chno à ờ mot anhtrong máy",
+      "sequence_ratio": 0.6222,
+      "ngram_jaccard": 0.1714
+    },
+    {
+      "fresh_id": "fresh20260626_050",
+      "fresh_query": "Record video tức thì giúp tôi",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_vidcap_002",
+      "reference_query": "Bấm record video ngay bây giờ",
+      "sequence_ratio": 0.6207,
+      "ngram_jaccard": 0.2927
+    },
+    {
+      "fresh_id": "fresh20260626_003",
+      "fresh_query": "Tạo tài liệu JSON rỗng tên config_backup.json",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug3_createdoc_002",
+      "reference_query": "Tạo tài liệu docx tên Bien_ban_hop.docx",
+      "sequence_ratio": 0.619,
+      "ngram_jaccard": 0.2459
+    },
+    {
+      "fresh_id": "fresh20260626_079",
+      "fresh_query": "Bật trang cấu hình APN",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug_video_003_noisy_medium",
+      "reference_query": "Bắt đầu ghihình ngay",
+      "sequence_ratio": 0.619,
+      "ngram_jaccard": 0.1875
+    },
+    {
+      "fresh_id": "fresh20260626_011",
+      "fresh_query": "Mở bộ chọn âm thanh, tôi cần một file wav",
+      "reference_file": "noisy_smoke_medium.jsonl",
+      "reference_id": "file_01",
+      "reference_query": "à ờ Chọn motảnh tron máy",
+      "sequence_ratio": 0.6154,
+      "ngram_jaccard": 0.234
+    },
+    {
+      "fresh_id": "fresh20260626_107",
+      "fresh_query": "Xem liên hệ",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug4_neg_009_noisy_medium",
+      "reference_query": "Mở nhạclên nghe",
+      "sequence_ratio": 0.6154,
+      "ngram_jaccard": 0.0476
+    },
+    {
+      "fresh_id": "fresh20260626_046",
+      "fresh_query": "Liệt kê alarm hiện tại trong máy",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_showalarm_001",
+      "reference_query": "Liệt kê tất cả báo thức đang có trên máy",
+      "sequence_ratio": 0.6111,
+      "ngram_jaccard": 0.2182
+    },
+    {
+      "fresh_id": "fresh20260626_087",
+      "fresh_query": "Email đến finance@delta.vn với chủ đề Hóa đơn tháng 6, nội dung: Nhờ kiểm tra giúp tôi",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug3_email_002",
+      "reference_query": "Soạn mail cho finance@company.vn subject Hóa đơn tháng 6 body: Vui lòng kiểm tra file đính kèm",
+      "sequence_ratio": 0.6111,
+      "ngram_jaccard": 0.2761
+    },
+    {
+      "fresh_id": "fresh20260626_069",
+      "fresh_query": "Lấy email của cô Mai Phương",
+      "reference_file": "vi_droidcall_test60.jsonl",
+      "reference_id": "vdc_contact_lookup_005",
+      "reference_query": "Địa chỉ của cô Mai trong danh bạ",
+      "sequence_ratio": 0.6102,
+      "ngram_jaccard": 0.2619
+    },
+    {
+      "fresh_id": "fresh20260626_061",
+      "fresh_query": "Chuẩn bị giao diện video trong camera",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_camvid_005",
+      "reference_query": "Mở chế độ quay video trên camera",
+      "sequence_ratio": 0.6087,
+      "ngram_jaccard": 0.25
+    },
+    {
+      "fresh_id": "fresh20260626_027",
+      "fresh_query": "Đặt lịch gọi phụ huynh tối mai 19h30",
+      "reference_file": "vi_droidcall_train191_final.jsonl",
+      "reference_id": "vdc_event_013",
+      "reference_query": "Thêm lịch họp phụ huynh lúc 7 giờ tối thứ 5",
+      "sequence_ratio": 0.6076,
+      "ngram_jaccard": 0.2807
+    },
+    {
+      "fresh_id": "fresh20260626_068",
+      "fresh_query": "Bấm số 028 7300 6688 nhưng để tôi xác nhận",
+      "reference_file": "vi_droidcall_targeted_aug5.jsonl",
+      "reference_id": "aug5_dial_nospace_002",
+      "reference_query": "Bấm số 028 3838 3838 gọi cho cửa hàng",
+      "sequence_ratio": 0.6076,
+      "ngram_jaccard": 0.1897
+    },
+    {
+      "fresh_id": "fresh20260626_123",
+      "fresh_query": "Ghi âm cuộc gọi đang diễn ra",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_neg_011",
+      "reference_query": "Gọi lại cuộc gọi nhỡ vừa rồi",
+      "sequence_ratio": 0.6071,
+      "ngram_jaccard": 0.1905
+    },
+    {
+      "fresh_id": "fresh20260626_124",
+      "fresh_query": "Tắt WiFi ngay",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug_video_003_noisy_medium",
+      "reference_query": "Bắt đầu ghihình ngay",
+      "sequence_ratio": 0.6061,
+      "ngram_jaccard": 0.16
+    },
+    {
+      "fresh_id": "fresh20260626_014",
+      "fresh_query": "Cho tôi đổi ringtone mặc định",
+      "reference_file": "vi_droidcall_train191_final.jsonl",
+      "reference_id": "vdc_pick_008",
+      "reference_query": "Cho tôi chọn một địa chỉ",
+      "sequence_ratio": 0.6038,
+      "ngram_jaccard": 0.1795
+    },
+    {
+      "fresh_id": "fresh20260626_056",
+      "fresh_query": "Cho tôi xem liên hệ contacts://club/leader",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_viewcontact_001",
+      "reference_query": "Xem thông tin liên hệ contacts://id/10",
+      "sequence_ratio": 0.6,
+      "ngram_jaccard": 0.3571
+    },
+    {
+      "fresh_id": "fresh20260626_112",
+      "fresh_query": "Bật playlist nhạc acoustic trong máy",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_neg_013",
+      "reference_query": "Xóa hết ảnh cũ trong máy",
+      "sequence_ratio": 0.6,
+      "ngram_jaccard": 0.1667
+    },
+    {
+      "fresh_id": "fresh20260626_095",
+      "fresh_query": "Tra cứu bài hướng dẫn nộp thuế cá nhân online",
+      "reference_file": "codeswitch_queries.jsonl",
+      "reference_id": "cs_web_04",
+      "reference_query": "Search for hướng dẫn nấu bún bò Huế online",
+      "sequence_ratio": 0.5977,
+      "ngram_jaccard": 0.2857
+    },
+    {
+      "fresh_id": "fresh20260626_090",
+      "fresh_query": "Soạn SMS tới +84 934 555 121 nội dung Đơn hàng đã giao",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_sms_002",
+      "reference_query": "Soạn tin cho 0987654321 nội dung đang trên đường",
+      "sequence_ratio": 0.5882,
+      "ngram_jaccard": 0.2078
+    },
+    {
+      "fresh_id": "fresh20260626_085",
+      "fresh_query": "Soạn email tới hr@vietlab.vn, tiêu đề Lịch phỏng vấn, nội dung Tôi xác nhận tham gia lúc 9h",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_email_010",
+      "reference_query": "Soạn email cho hung@company.vn tiêu đề xin phép nghỉ nội dung em xin nghỉ ngày mai vì bận việc gia đình",
+      "sequence_ratio": 0.5876,
+      "ngram_jaccard": 0.2481
+    },
+    {
+      "fresh_id": "fresh20260626_126",
+      "fresh_query": "Tóm tắt email mới nhất",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_create_doc_003",
+      "reference_query": "Tạo tài liệu mới tên ke_hoach.txt",
+      "sequence_ratio": 0.5818,
+      "ngram_jaccard": 0.0851
+    },
+    {
+      "fresh_id": "fresh20260626_075",
+      "fresh_query": "Lấy địa chỉ trong URI contacts://family/ba",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_geturi_003",
+      "reference_query": "Lấy địa chỉ nhà từ URI liên hệ content://contacts/5",
+      "sequence_ratio": 0.5806,
+      "ngram_jaccard": 0.3182
+    },
+    {
+      "fresh_id": "fresh20260626_117",
+      "fresh_query": "Viết status mới lên mạng xã hội giúp tôi",
+      "reference_file": "noisy_smoke_light.jsonl",
+      "reference_id": "email_missing_01",
+      "reference_query": "Gửi email bao cáo giúp tôi",
+      "sequence_ratio": 0.5758,
+      "ngram_jaccard": 0.1321
+    },
+    {
+      "fresh_id": "fresh20260626_103",
+      "fresh_query": "Tôi muốn lấy tài liệu nhưng chưa nói loại nào",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_ringtone_003",
+      "reference_query": "Tôi muốn đổi nhạc chuông điện thoại",
+      "sequence_ratio": 0.575,
+      "ngram_jaccard": 0.2241
+    },
+    {
+      "fresh_id": "fresh20260626_026",
+      "fresh_query": "Tạo sự kiện khám tổng quát ngày 2026-07-03 lúc 08:00",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug3_event_002_noisy_light",
+      "reference_query": "Tạo sự kiện nộp hồ sơ ngày 25 tháng 7 lúc 9giờ",
+      "sequence_ratio": 0.5714,
+      "ngram_jaccard": 0.2568
+    },
+    {
+      "fresh_id": "fresh20260626_100",
+      "fresh_query": "Mai nhớ đánh thức tôi nhưng tôi chưa nói mấy giờ",
+      "reference_file": "noisy_smoke_medium.jsonl",
+      "reference_id": "contact_04",
+      "reference_query": "Mở danhs à thì áchđe tôi chọn một địa chi email",
+      "sequence_ratio": 0.5684,
+      "ngram_jaccard": 0.1528
+    },
+    {
+      "fresh_id": "fresh20260626_104",
+      "fresh_query": "Đi tới đâu đó nhưng tôi chưa nói địa điểm",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug3_neg_018_noisy_light",
+      "reference_query": "Gửi mật khẩu ngân hàng củatôi cho người khác",
+      "sequence_ratio": 0.5647,
+      "ngram_jaccard": 0.1094
+    },
+    {
+      "fresh_id": "fresh20260626_094",
+      "fresh_query": "Search giá vé tàu Sài Gòn Quy Nhơn tháng 8",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "vdc_unsupported_019_noisy_medium",
+      "reference_query": "Đặt vé tàu từ SàiGòn ra HàNội",
+      "sequence_ratio": 0.5634,
+      "ngram_jaccard": 0.2222
+    },
+    {
+      "fresh_id": "fresh20260626_067",
+      "fresh_query": "Mở dialer với số +84 912 000 333",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug2_dial_002_noisy_light",
+      "reference_query": "Cho tôi gọi số 0912000111",
+      "sequence_ratio": 0.5614,
+      "ngram_jaccard": 0.1304
+    },
+    {
+      "fresh_id": "fresh20260626_023",
+      "fresh_query": "Tạo contact công ty: Lan Anh Logistics, điện thoại 02877770000",
+      "reference_file": "vi_droidcall_train191_final.jsonl",
+      "reference_id": "vdc_contact_insert_007",
+      "reference_query": "Tạo liên hệ anh Tuấn điện thoại 0911002200",
+      "sequence_ratio": 0.5577,
+      "ngram_jaccard": 0.2237
+    },
+    {
+      "fresh_id": "fresh20260626_019",
+      "fresh_query": "Capture một tấm ảnh rồi lưu URI lại",
+      "reference_file": "vi_droidcall_train191_final.jsonl",
+      "reference_id": "vdc_photo_005",
+      "reference_query": "Chụp ảnh và lưu lại",
+      "sequence_ratio": 0.5556,
+      "ngram_jaccard": 0.1951
+    },
+    {
+      "fresh_id": "fresh20260626_049",
+      "fresh_query": "Quay ngay clip hiện trường và lưu kết quả",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_vidcap_001",
+      "reference_query": "Quay video ngay và lưu file lại",
+      "sequence_ratio": 0.5556,
+      "ngram_jaccard": 0.2308
+    },
+    {
+      "fresh_id": "fresh20260626_098",
+      "fresh_query": "Nhắn cho người đó là tôi tới rồi",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "vdc_sms_005_noisy_medium",
+      "reference_query": "Soạntinnhắn cho 0333456789 nội dung xin lỗi tôi bận",
+      "sequence_ratio": 0.5542,
+      "ngram_jaccard": 0.1967
+    },
+    {
+      "fresh_id": "fresh20260626_028",
+      "fresh_query": "Ghi vào lịch: workshop AI, cả ngày 12 tháng 9",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_event_003",
+      "reference_query": "Đặt lịch khám nha khoa 9 giờ sáng ngày 20 tháng 6",
+      "sequence_ratio": 0.5532,
+      "ngram_jaccard": 0.1622
+    },
+    {
+      "fresh_id": "fresh20260626_064",
+      "fresh_query": "Chuẩn bị màn hình quay phim, chưa cần quay",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_web_005",
+      "reference_query": "Search lịch chiếu phim tuần này",
+      "sequence_ratio": 0.5479,
+      "ngram_jaccard": 0.1321
+    },
+    {
+      "fresh_id": "fresh20260626_088",
+      "fresh_query": "Compose mail to qa-team@example.com subject Regression log body Build 17 đã pass smoke",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_email_005",
+      "reference_query": "Compose email đến client@email.com subject: Proposal Q3, body: Kính gửi quý khách",
+      "sequence_ratio": 0.5389,
+      "ngram_jaccard": 0.1556
+    },
+    {
+      "fresh_id": "fresh20260626_086",
+      "fresh_query": "Gửi mail cho an.ngo@school.edu và khoa@school.edu subject Cập nhật đề cương body Em gửi bản mới",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug3_email_003_noisy_light",
+      "reference_query": "Email đến lan@school.edu và minh@school.edu tiêu đề Bài tập nhóm nội dung: Mình đã cập nhật tài liệu",
+      "sequence_ratio": 0.5333,
+      "ngram_jaccard": 0.2061
+    },
+    {
+      "fresh_id": "fresh20260626_001",
+      "fresh_query": "Tạo file markdown tên ghi_chu_hop.md để tôi chọn nơi lưu",
+      "reference_file": "vi_droidcall_targeted_aug5.jsonl",
+      "reference_id": "aug5_createdoc_docx_001",
+      "reference_query": "Tạo file Word mới tên Hợp đồng 2026",
+      "sequence_ratio": 0.5275,
+      "ngram_jaccard": 0.1622
+    },
+    {
+      "fresh_id": "fresh20260626_089",
+      "fresh_query": "Nhắn 0866 120 120: em gửi xe ở cổng số 2",
+      "reference_file": "vi_droidcall_v1.jsonl",
+      "reference_id": "vdc_sms_010",
+      "reference_query": "Nhắn 0866123456 là tôi đang trên đường về",
+      "sequence_ratio": 0.5185,
+      "ngram_jaccard": 0.1385
+    },
+    {
+      "fresh_id": "fresh20260626_022",
+      "fresh_query": "Lưu danh bạ cho Trương Minh Nhật, email nhat.truong@example.vn",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_inscontact_002",
+      "reference_query": "Lưu danh bạ cho Lê Thị Bảo, email lethibao@gmail.com",
+      "sequence_ratio": 0.5088,
+      "ngram_jaccard": 0.2533
+    },
+    {
+      "fresh_id": "fresh20260626_002",
+      "fresh_query": "Lưu một bảng tính mới tên ngan_sach_gia_dinh.xlsx",
+      "reference_file": "vi_smoke_test.jsonl",
+      "reference_id": "file_03",
+      "reference_query": "Tạo tệp văn bản mới tên ghi_chu.txt",
+      "sequence_ratio": 0.5,
+      "ngram_jaccard": 0.1343
+    },
+    {
+      "fresh_id": "fresh20260626_096",
+      "fresh_query": "Tìm bằng baidu cụm từ học tiếng Trung HSK 3",
+      "reference_file": "vi_droidcall_train444_v9.jsonl",
+      "reference_id": "aug5_settings_display_002",
+      "reference_query": "Mở trang cài đặt màn hình hiển thị",
+      "sequence_ratio": 0.4935,
+      "ngram_jaccard": 0.0615
+    },
+    {
+      "fresh_id": "fresh20260626_024",
+      "fresh_query": "Thêm Nguyễn Phúc Khang vào danh bạ, công ty Delta Lab, địa chỉ 9 Nguyễn Huệ",
+      "reference_file": "vi_droidcall_train_robust.jsonl",
+      "reference_id": "aug_event_004",
+      "reference_query": "Thêm sự kiện sinh nhật bạn vào lịch lúc 6 giờ chiều",
+      "sequence_ratio": 0.4603,
+      "ngram_jaccard": 0.12
+    },
+    {
+      "fresh_id": "fresh20260626_092",
+      "fresh_query": "Text 0987000111: meeting moved to room 305",
+      "reference_file": "vi_droidcall_external_test.jsonl",
+      "reference_id": "ext_timer_002",
+      "reference_query": "Hẹn giờ 1 tiếng rưỡi cho nồi cơm",
+      "sequence_ratio": 0.4324,
+      "ngram_jaccard": 0.0149
+    }
+  ],
+  "note": "Exact overlaps should remain zero. High similarity rows require manual review before reporting the split as fresh."
+}

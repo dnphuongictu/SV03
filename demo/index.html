@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ViDroidCall Studio — gán nhãn dữ liệu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>ViDroidCall Studio</h1>
+  <p>Công cụ gán nhãn câu lệnh tiếng Việt cho trợ lý Android offline. Dữ liệu
+  chỉ lưu trong trình duyệt (localStorage) cho tới khi bạn xuất JSONL.</p>
+  <p><a href="mockup_nguoi_lon_tuoi.html">Xem mockup ứng dụng cho người lớn
+  tuổi</a> (minh hoạ UX xác nhận lệnh bằng giọng nói — không phải công cụ này).</p>
+</header>
+
+<main>
+  <section class="panel" id="form-panel">
+    <h2>Thêm câu lệnh</h2>
+    <form id="item-form">
+      <div class="field">
+        <label for="f-id">ID</label>
+        <input id="f-id" name="id" required>
+      </div>
+      <div class="field">
+        <label for="f-utterance">Câu lệnh (utterance)</label>
+        <input id="f-utterance" name="utterance" required placeholder="Đặt báo thức 6 giờ sáng mai">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-language">Ngôn ngữ</label>
+          <select id="f-language" name="language">
+            <option value="vi">vi</option>
+            <option value="vi-en">vi-en</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-intent">Intent</label>
+          <select id="f-intent" name="intent" required></select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-risk">Mức rủi ro</label>
+          <select id="f-risk" name="risk_level">
+            <option value="low">low</option>
+            <option value="medium" selected>medium</option>
+            <option value="high">high</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-split">Split</label>
+          <select id="f-split" name="split">
+            <option value="train">train</option>
+            <option value="validation">validation</option>
+            <option value="test">test</option>
+            <option value="test_ood">test_ood</option>
+            <option value="test_ambiguous">test_ambiguous</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset id="arg-fields">
+        <legend>Arguments theo intent</legend>
+      </fieldset>
+
+      <div class="field">
+        <label for="f-notes">Ghi chú</label>
+        <input id="f-notes" name="notes" placeholder="clear / requires confirmation / ...">
+      </div>
+
+      <div id="form-errors" class="errors" role="alert"></div>
+      <button type="submit">Thêm vào tập dữ liệu</button>
+    </form>
+  </section>
+
+  <section class="panel" id="dashboard-panel">
+    <h2>Dashboard</h2>
+    <div id="dashboard"></div>
+
+    <h2>Nhập / xuất dữ liệu</h2>
+    <div class="io-row">
+      <label class="file-label">
+        Nhập JSONL có sẵn
+        <input type="file" id="import-input" accept=".jsonl,.txt">
+      </label>
+      <button id="export-btn" type="button">Xuất JSONL</button>
+      <button id="reset-btn" type="button" class="danger">Xoá hết</button>
+    </div>
+    <div id="import-status" class="hint"></div>
+  </section>
+
+  <section class="panel" id="table-panel">
+    <h2>Dữ liệu đã nhập (<span id="item-count">0</span>)</h2>
+    <div class="table-wrap">
+      <table id="item-table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Utterance</th><th>Intent</th><th>Split</th>
+            <th>Risk</th><th>Arguments</th><th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

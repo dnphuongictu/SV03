@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup — Trợ lý giọng nói cho người lớn tuổi</title>
+<style>
+  :root {
+    --ink: #1b2430;
+    --paper: #fbf7ee;
+    --accent: #2f6fed;
+    --good: #1e8e5a;
+    --good-bg: #e4f6ec;
+    --bad: #b5452f;
+    --bad-bg: #fbe9e4;
+    --muted: #6b7280;
+    --border: #d9d2bf;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem 3rem;
+    background: #eef0f4;
+    font-family: system-ui, "Segoe UI", sans-serif;
+    color: var(--ink);
+  }
+  .intro { max-width: 640px; text-align: center; }
+  .intro h1 { margin: 0 0 0.4rem; font-size: 1.4rem; }
+  .intro p { margin: 0; opacity: 0.75; line-height: 1.5; }
+  .intro code { background: #fff; padding: 0.1rem 0.35rem; border-radius: 4px; }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    max-width: 640px;
+  }
+  .controls button {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    background: #fff;
+    color: var(--accent);
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+  .controls button.active { background: var(--accent); color: #fff; }
+
+  .phone {
+    width: 340px;
+    height: 660px;
+    background: #14171c;
+    border-radius: 42px;
+    padding: 14px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.28);
+  }
+  .screen {
+    width: 100%;
+    height: 100%;
+    background: var(--paper);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.6rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .state { display: none; flex-direction: column; align-items: center; gap: 1.4rem; width: 100%; }
+  .state.visible { display: flex; }
+
+  .mic-btn {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(47,111,237,0.35);
+  }
+  .mic-btn:active { transform: scale(0.97); }
+  .hint { font-size: 1.15rem; color: var(--muted); }
+
+  .listening-dot {
+    width: 90px; height: 90px; border-radius: 50%;
+    background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.4rem; color: #fff;
+    animation: pulse 1s infinite ease-in-out;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0.75; }
+  }
+
+  .understood {
+    font-size: 1.55rem;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  .understood .who { color: var(--accent); }
+
+  .btn-row { display: flex; flex-direction: column; gap: 0.9rem; width: 100%; }
+  .big-btn {
+    width: 100%;
+    padding: 1.1rem 1rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  .big-btn.confirm { background: var(--good-bg); color: var(--good); border: 2px solid var(--good); }
+  .big-btn.cancel { background: var(--bad-bg); color: var(--bad); border: 2px solid var(--bad); }
+  .big-btn.retry { background: var(--accent); color: #fff; }
+
+  .badge {
+    font-size: 3.4rem;
+  }
+  .result-text { font-size: 1.4rem; font-weight: 600; }
+  .risk-tag {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .note {
+    max-width: 640px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>Mockup — trợ lý giọng nói cho người lớn tuổi</h1>
+  <p>
+    Minh hoạ UX phía người dùng cuối, xây trên đúng các trường đã có trong
+    <code>data/vidroidcall.schema.json</code> (<code>risk_level</code>) và
+    định dạng tool-call của VIntentAgent (<code>requires_confirmation</code>).
+    Đây KHÔNG phải công cụ gán nhãn dữ liệu — công cụ đó ở <code>index.html</code>.
+  </p>
+</div>
+
+<div class="controls" id="scenario-buttons">
+  <button data-scenario="lowrisk">1. Lệnh an toàn — báo thức (risk_level: low)</button>
+  <button data-scenario="highrisk">2. Lệnh cần xác nhận — gọi điện (risk_level: high)</button>
+  <button data-scenario="clarify">3. Lệnh thiếu thông tin — nhắn tin</button>
+</div>
+
+<div class="phone">
+  <div class="screen">
+    <span class="risk-tag" id="risk-tag"></span>
+
+    <div class="state visible" id="state-home">
+      <button class="mic-btn" id="mic-btn">🎤</button>
+      <div class="hint">Nhấn để nói</div>
+    </div>
+
+    <div class="state" id="state-listening">
+      <div class="listening-dot">🎤</div>
+      <div class="hint" id="listening-text">Đang nghe...</div>
+    </div>
+
+    <div class="state" id="state-auto">
+      <div class="badge">✅</div>
+      <div class="result-text" id="auto-text"></div>
+      <div class="hint">Không cần xác nhận — lệnh an toàn, thực hiện ngay</div>
+    </div>
+
+    <div class="state" id="state-confirm">
+      <div class="understood" id="confirm-text"></div>
+      <div class="btn-row">
+        <button class="big-btn confirm" id="confirm-yes">✅ Đúng, làm luôn</button>
+        <button class="big-btn cancel" id="confirm-no">❌ Không phải</button>
+      </div>
+    </div>
+
+    <div class="state" id="state-executing">
+      <div class="listening-dot">⏳</div>
+      <div class="hint" id="executing-text"></div>
+    </div>
+
+    <div class="state" id="state-done">
+      <div class="badge">✅</div>
+      <div class="result-text" id="done-text"></div>
+      <button class="big-btn retry" id="done-home">Về màn hình chính</button>
+    </div>
+
+    <div class="state" id="state-cancelled">
+      <div class="badge">↩️</div>
+      <div class="result-text">Đã huỷ, không có gì được gửi</div>
+      <button class="big-btn retry" id="cancel-home">Về màn hình chính</button>
+    </div>
+
+    <div class="state" id="state-clarify">
+      <div class="understood" id="clarify-text"></div>
+      <button class="big-btn retry" id="clarify-retry">🎤 Nói lại</button>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <strong>Cách trình diễn:</strong> chọn 1 trong 3 tình huống ở trên, rồi bấm
+  nút micro to trong điện thoại. Tình huống 1 (báo thức) tự thực hiện ngay vì
+  <code>risk_level: low</code>. Tình huống 2 (gọi điện) bắt buộc đọc lại lệnh
+  và chờ bấm một trong hai nút to — mô phỏng đúng <code>requires_confirmation</code>
+  và số liệu Confirmation Accuracy = 0.944 đã đo trên Fresh126
+  (xem <code>docs/04_KET_QUA_NGHIEN_CUU_NEN.md</code>). Tình huống 3 (nhắn tin
+  thiếu người nhận) mô phỏng đúng nhãn <code>clarify</code> trong dataset.
+</div>
+
+<script>
+const scenarios = {
+  lowrisk: {
+    listeningText: "Đang nghe: “Đặt báo thức 6 giờ sáng mai”...",
+    risk: "risk_level: low",
+    flow: "auto",
+    autoText: "Đã đặt báo thức 6:00 sáng mai",
+  },
+  highrisk: {
+    listeningText: "Đang nghe: “Gọi cho con trai”...",
+    risk: "risk_level: high — cần xác nhận",
+    flow: "confirm",
+    confirmText: 'Bác muốn gọi cho <span class="who">Con trai</span>, đúng không ạ?',
+    executingText: "Đang gọi Con trai...",
+    doneText: "Đã gọi xong",
+  },
+  clarify: {
+    listeningText: "Đang nghe: “Nhắn tin cho Nam”...",
+    risk: "intent: clarify — thiếu nội dung tin nhắn",
+    flow: "clarify",
+    clarifyText: 'Bác muốn nhắn <span class="who">nội dung gì</span> cho Nam ạ?',
+  },
+};
+
+let current = "lowrisk";
+const states = [...document.querySelectorAll(".state")];
+const riskTag = document.getElementById("risk-tag");
+
+function show(id) {
+  states.forEach((el) => el.classList.toggle("visible", el.id === id));
+}
+
+function setScenario(name) {
+  current = name;
+  document.querySelectorAll("#scenario-buttons button").forEach((b) => {
+    b.classList.toggle("active", b.dataset.scenario === name);
+  });
+  riskTag.textContent = "";
+  show("state-home");
+}
+
+function runScenario() {
+  const s = scenarios[current];
+  riskTag.textContent = s.risk;
+  document.getElementById("listening-text").textContent = s.listeningText;
+  show("state-listening");
+
+  setTimeout(() => {
+    if (s.flow === "auto") {
+      document.getElementById("auto-text").textContent = s.autoText;
+      show("state-auto");
+      setTimeout(() => show("state-home"), 1800);
+    } else if (s.flow === "confirm") {
+      document.getElementById("confirm-text").innerHTML = s.confirmText;
+      show("state-confirm");
+    } else if (s.flow === "clarify") {
+      document.getElementById("clarify-text").innerHTML = s.clarifyText;
+      show("state-clarify");
+    }
+  }, 1100);
+}
+
+document.getElementById("mic-btn").addEventListener("click", runScenario);
+
+document.getElementById("confirm-yes").addEventListener("click", () => {
+  const s = scenarios[current];
+  document.getElementById("executing-text").textContent = s.executingText;
+  show("state-executing");
+  setTimeout(() => {
+    document.getElementById("done-text").textContent = s.doneText;
+    show("state-done");
+  }, 1100);
+});
+
+document.getElementById("confirm-no").addEventListener("click", () => show("state-cancelled"));
+document.getElementById("done-home").addEventListener("click", () => show("state-home"));
+document.getElementById("cancel-home").addEventListener("click", () => show("state-home"));
+document.getElementById("clarify-retry").addEventListener("click", runScenario);
+
+document.querySelectorAll("#scenario-buttons button").forEach((b) => {
+  b.addEventListener("click", () => setScenario(b.dataset.scenario));
+});
+
+setScenario("lowrisk");
+</script>
+</body>
+</html>

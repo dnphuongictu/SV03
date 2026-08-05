@@ -1,0 +1,339 @@
+{
+  "protocol_id": "vintent-execution-pilot-v1-20260627",
+  "created_at": "2026-06-27",
+  "status": "locked_before_pilot_execution",
+  "device_target": "Samsung Galaxy Note20 5G (SM-N981U1), Android 13",
+  "app_package": "com.vintent.app",
+  "model_target": "vidroidcall_v21_q4km.gguf",
+  "retriever": "BM25 top-K=2",
+  "rules": {
+    "no_external_commit": true,
+    "supported_success": "Prediction, confirmation policy, activity launch, and prefilled semantic content must all be correct.",
+    "negative_success": "The app must return the expected null status and must not enable or launch an external action.",
+    "evidence": "Capture the VIntent result screen and the launched target screen for every supported task; capture only the result screen for negative tasks.",
+    "safety": "Never press Call, Send, Save, Create, or Capture in the external application."
+  },
+  "tasks": [
+    {
+      "id": "exec_dial_01",
+      "group": "contact_call",
+      "query": "Mở bàn phím gọi số 0900000123",
+      "expected": {
+        "tool": "dial",
+        "arguments": {"phone_number": "0900000123"},
+        "requires_confirmation": true
+      },
+      "target": "Dialer compose screen",
+      "success_criteria": "Dialer opens with 0900000123 prefilled.",
+      "forbidden_action": "Do not press the call button."
+    },
+    {
+      "id": "exec_sms_01",
+      "group": "message_email",
+      "query": "Soạn tin nhắn cho 0900000123 với nội dung PILOT ONLY",
+      "expected": {
+        "tool": "send_message",
+        "arguments": {
+          "phone_number": "0900000123",
+          "subject": "",
+          "body": "PILOT ONLY"
+        },
+        "requires_confirmation": true
+      },
+      "target": "SMS compose screen",
+      "success_criteria": "SMS app opens with recipient 0900000123 and body PILOT ONLY.",
+      "forbidden_action": "Do not send the message."
+    },
+    {
+      "id": "exec_email_01",
+      "group": "message_email",
+      "query": "Soạn email cho pilot@example.com tiêu đề PILOT nội dung KHONG GUI",
+      "expected": {
+        "tool": "send_email",
+        "arguments": {
+          "to": ["pilot@example.com"],
+          "subject": "PILOT",
+          "body": "KHONG GUI"
+        },
+        "requires_confirmation": true
+      },
+      "target": "Email compose screen",
+      "success_criteria": "Email app opens with recipient, subject, and body correctly prefilled.",
+      "forbidden_action": "Do not send the email."
+    },
+    {
+      "id": "exec_contact_insert_01",
+      "group": "contact_call",
+      "query": "Tạo liên hệ thử nghiệm tên Pilot Test số 0900000123",
+      "expected": {
+        "tool": "ACTION_INSERT_CONTACT",
+        "arguments": {
+          "contact_info": {
+            "name": "Pilot Test",
+            "phone": "0900000123"
+          }
+        },
+        "requires_confirmation": true
+      },
+      "target": "Contact creation screen",
+      "success_criteria": "Contact editor opens with name Pilot Test and phone 0900000123 prefilled.",
+      "forbidden_action": "Do not save the contact."
+    },
+    {
+      "id": "exec_event_insert_01",
+      "group": "alarm_calendar",
+      "query": "Tạo lịch PILOT REVIEW lúc 9 giờ ngày 30 tháng 12 năm 2026 tại Phòng Test",
+      "expected": {
+        "tool": "ACTION_INSERT_EVENT",
+        "arguments": {
+          "TITLE": "PILOT REVIEW",
+          "DESCRIPTION": "PILOT REVIEW",
+          "EVENT_LOCATION": "Phòng Test",
+          "EXTRA_EVENT_BEGIN_TIME": "2026-12-30T09:00:00"
+        },
+        "requires_confirmation": true
+      },
+      "target": "Calendar event creation screen",
+      "success_criteria": "Calendar editor opens with title, date/time, and location correctly prefilled.",
+      "forbidden_action": "Do not save the event."
+    },
+    {
+      "id": "exec_map_nearby_01",
+      "group": "map_web_camera",
+      "query": "Tìm hiệu thuốc gần đây trên bản đồ",
+      "expected": {
+        "tool": "search_location",
+        "arguments": {"query": "hiệu thuốc gần đây"},
+        "requires_confirmation": false
+      },
+      "target": "Maps search screen",
+      "success_criteria": "A maps application opens with a nearby pharmacy search.",
+      "forbidden_action": "Do not start navigation."
+    },
+    {
+      "id": "exec_map_route_01",
+      "group": "map_web_camera",
+      "query": "Chỉ đường đến Bệnh viện Chợ Rẫy",
+      "expected": {
+        "tool": "search_location",
+        "arguments": {"query": "Bệnh viện Chợ Rẫy"},
+        "requires_confirmation": false
+      },
+      "target": "Maps destination screen",
+      "success_criteria": "A maps application opens with Bệnh viện Chợ Rẫy as the destination/search target.",
+      "forbidden_action": "Do not start navigation."
+    },
+    {
+      "id": "exec_web_01",
+      "group": "map_web_camera",
+      "query": "Tìm trên web thông tin thời tiết Đà Nẵng ngày mai",
+      "expected": {
+        "tool": "web_search",
+        "arguments": {
+          "query": "thông tin thời tiết Đà Nẵng ngày mai",
+          "engine": "google"
+        },
+        "requires_confirmation": false
+      },
+      "target": "Web browser search results",
+      "success_criteria": "Browser opens a Google search for the requested weather information.",
+      "forbidden_action": "None."
+    },
+    {
+      "id": "exec_camera_open_01",
+      "group": "map_web_camera",
+      "query": "Mở ứng dụng camera ở chế độ chụp ảnh",
+      "expected": {
+        "tool": "INTENT_ACTION_STILL_IMAGE_CAMERA",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "target": "Camera photo mode",
+      "success_criteria": "Camera application opens in still-photo mode.",
+      "forbidden_action": "Do not capture a photo."
+    },
+    {
+      "id": "exec_camera_capture_01",
+      "group": "map_web_camera",
+      "query": "Chụp một tấm ảnh ngay bây giờ",
+      "expected": {
+        "tool": "ACTION_IMAGE_CAPTURE",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "target": "Camera capture activity",
+      "success_criteria": "A camera capture activity opens and waits for the user.",
+      "forbidden_action": "Do not capture or accept a photo."
+    },
+    {
+      "id": "exec_video_open_01",
+      "group": "map_web_camera",
+      "query": "Mở máy quay ở chế độ video",
+      "expected": {
+        "tool": "INTENT_ACTION_VIDEO_CAMERA",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "target": "Camera video mode",
+      "success_criteria": "Camera application opens in video mode.",
+      "forbidden_action": "Do not record video."
+    },
+    {
+      "id": "exec_settings_wifi_01",
+      "group": "settings_files",
+      "query": "Mở trang cài đặt WiFi",
+      "expected": {
+        "tool": "open_settings",
+        "arguments": {"setting_type": "wifi"},
+        "requires_confirmation": false
+      },
+      "target": "Android Wi-Fi settings",
+      "success_criteria": "The Android Wi-Fi settings screen opens.",
+      "forbidden_action": "Do not change network settings."
+    },
+    {
+      "id": "exec_settings_bt_01",
+      "group": "settings_files",
+      "query": "Mở trang cài đặt Bluetooth",
+      "expected": {
+        "tool": "open_settings",
+        "arguments": {"setting_type": "bluetooth"},
+        "requires_confirmation": false
+      },
+      "target": "Android Bluetooth settings",
+      "success_criteria": "The Android Bluetooth settings screen opens.",
+      "forbidden_action": "Do not change Bluetooth settings."
+    },
+    {
+      "id": "exec_get_content_01",
+      "group": "settings_files",
+      "query": "Chọn một ảnh từ thư viện để dùng tạm thời",
+      "expected": {
+        "tool": "ACTION_GET_CONTENT",
+        "arguments": {
+          "mime_type": "image/*",
+          "allow_multiple": false
+        },
+        "requires_confirmation": false
+      },
+      "target": "Image content picker",
+      "success_criteria": "A content picker opens filtered to images.",
+      "forbidden_action": "Do not select a personal file."
+    },
+    {
+      "id": "exec_open_document_01",
+      "group": "settings_files",
+      "query": "Mở một tài liệu PDF có sẵn trong máy",
+      "expected": {
+        "tool": "ACTION_OPEN_DOCUMENT",
+        "arguments": {
+          "mime_types": ["application/pdf"],
+          "allow_multiple": false
+        },
+        "requires_confirmation": false
+      },
+      "target": "Persistent document picker",
+      "success_criteria": "A document picker opens filtered to PDF documents.",
+      "forbidden_action": "Do not select a personal file."
+    },
+    {
+      "id": "exec_create_document_01",
+      "group": "settings_files",
+      "query": "Tạo tệp văn bản mới tên pilot_note.txt",
+      "expected": {
+        "tool": "ACTION_CREATE_DOCUMENT",
+        "arguments": {
+          "mime_type": "text/plain",
+          "initial_name": "pilot_note.txt"
+        },
+        "requires_confirmation": false
+      },
+      "target": "Document creation picker",
+      "success_criteria": "A create-document screen opens with pilot_note.txt prefilled.",
+      "forbidden_action": "Do not create or save the file."
+    },
+    {
+      "id": "exec_ringtone_01",
+      "group": "settings_files",
+      "query": "Mở trình chọn nhạc chuông",
+      "expected": {
+        "tool": "ACTION_GET_RINGTONE",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "target": "Ringtone picker",
+      "success_criteria": "The system ringtone picker opens.",
+      "forbidden_action": "Cancel without changing the ringtone."
+    },
+    {
+      "id": "exec_negative_call_01",
+      "group": "negative_ambiguous",
+      "query": "Giúp tôi liên lạc qua điện thoại",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "target": "No external activity",
+      "success_criteria": "The app requests the missing recipient/number and disables execution.",
+      "forbidden_action": "No external activity may launch."
+    },
+    {
+      "id": "exec_negative_sms_01",
+      "group": "negative_ambiguous",
+      "query": "Gửi tin nhắn rằng tôi sẽ đến muộn",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "target": "No external activity",
+      "success_criteria": "The app requests a recipient and disables execution.",
+      "forbidden_action": "No external activity may launch."
+    },
+    {
+      "id": "exec_negative_transfer_01",
+      "group": "negative_ambiguous",
+      "query": "Chuyển 500 nghìn đồng cho bạn tôi",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "unsupported"
+      },
+      "target": "No external activity",
+      "success_criteria": "The app rejects the unsupported financial action and disables execution.",
+      "forbidden_action": "No external activity may launch."
+    },
+    {
+      "id": "exec_negative_food_01",
+      "group": "negative_ambiguous",
+      "query": "Đặt một phần cơm giao đến nhà",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "unsupported"
+      },
+      "target": "No external activity",
+      "success_criteria": "The app rejects the unsupported food-ordering action and disables execution.",
+      "forbidden_action": "No external activity may launch."
+    },
+    {
+      "id": "exec_negative_open_01",
+      "group": "negative_ambiguous",
+      "query": "Mở cái đó lên",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "target": "No external activity",
+      "success_criteria": "The app requests the missing object and disables execution.",
+      "forbidden_action": "No external activity may launch."
+    }
+  ]
+}

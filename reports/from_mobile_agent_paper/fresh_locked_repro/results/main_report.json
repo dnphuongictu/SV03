@@ -1,0 +1,2285 @@
+{
+  "count": 126,
+  "tool_selection_accuracy": 0.746031746031746,
+  "schema_valid_rate": 0.9206349206349206,
+  "soft_argument_accuracy": 0.743801652892562,
+  "end_to_end_task_success": 0.5634920634920635,
+  "end_to_end_ci_95": "[0.476, 0.647]",
+  "groups": {
+    "alarm_calendar": {
+      "count": 16,
+      "tool_selection_accuracy": 0.9375,
+      "schema_valid_rate": 1.0,
+      "end_to_end_task_success": 0.4375
+    },
+    "camera_media": {
+      "count": 16,
+      "tool_selection_accuracy": 0.8125,
+      "schema_valid_rate": 0.9375,
+      "end_to_end_task_success": 0.8125
+    },
+    "contacts": {
+      "count": 24,
+      "tool_selection_accuracy": 0.75,
+      "schema_valid_rate": 0.9166666666666666,
+      "end_to_end_task_success": 0.5416666666666666
+    },
+    "files_settings": {
+      "count": 20,
+      "tool_selection_accuracy": 0.65,
+      "schema_valid_rate": 0.85,
+      "end_to_end_task_success": 0.55
+    },
+    "map_web": {
+      "count": 8,
+      "tool_selection_accuracy": 0.75,
+      "schema_valid_rate": 1.0,
+      "end_to_end_task_success": 0.75
+    },
+    "message_call": {
+      "count": 12,
+      "tool_selection_accuracy": 0.9166666666666666,
+      "schema_valid_rate": 0.9166666666666666,
+      "end_to_end_task_success": 0.8333333333333334
+    },
+    "negative_clarification": {
+      "count": 30,
+      "tool_selection_accuracy": 0.6,
+      "schema_valid_rate": 0.9,
+      "end_to_end_task_success": 0.36666666666666664
+    }
+  },
+  "errors": [
+    {
+      "id": "fresh20260626_002",
+      "query": "Lưu một bảng tính mới tên ngan_sach_gia_dinh.xlsx",
+      "expected": {
+        "tool": "ACTION_CREATE_DOCUMENT",
+        "arguments": {
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "initial_name": "ngan_sach_gia_dinh.xlsx"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_INSERT_DOCUMENT",
+        "arguments": {
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "filename": "ngan_sach_gia_dinh.xlsx"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": [
+        "unknown tool: ACTION_INSERT_DOCUMENT"
+      ]
+    },
+    {
+      "id": "fresh20260626_006",
+      "query": "Cập nhật contact URI contacts://team/linh-09 với email mới",
+      "expected": {
+        "tool": "ACTION_EDIT_CONTACT",
+        "arguments": {
+          "contact_uri": "contacts://team/linh-09",
+          "contact_info": {
+            "email": "linh09@work.vn"
+          }
+        },
+        "requires_confirmation": true
+      },
+      "prediction": {
+        "tool": "ACTION_EDIT_CONTACT",
+        "arguments": {
+          "contact_uri": "contacts://team/linh-09",
+          "contact_info": {
+            "email": "linh@example.com"
+          }
+        },
+        "requires_confirmation": true
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_008",
+      "query": "Tôi muốn chỉnh contact contacts://family/me-hoa",
+      "expected": {
+        "tool": "ACTION_EDIT_CONTACT",
+        "arguments": {
+          "contact_uri": "contacts://family/me-hoa"
+        },
+        "requires_confirmation": true
+      },
+      "prediction": {
+        "tool": "ACTION_EDIT_CONTACT",
+        "arguments": {
+          "contact_uri": "family#me-hoa"
+        },
+        "requires_confirmation": true
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_011",
+      "query": "Mở bộ chọn âm thanh, tôi cần một file wav",
+      "expected": {
+        "tool": "ACTION_GET_CONTENT",
+        "arguments": {
+          "mime_type": "audio/wav"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_GET_RINGTONE",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_013",
+      "query": "Vào màn hình chọn âm báo cuộc gọi",
+      "expected": {
+        "tool": "ACTION_GET_RINGTONE",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "open_settings",
+        "arguments": {
+          "setting_type": "audio"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": [
+        "setting_type is outside enum"
+      ]
+    },
+    {
+      "id": "fresh20260626_014",
+      "query": "Cho tôi đổi ringtone mặc định",
+      "expected": {
+        "tool": "ACTION_GET_RINGTONE",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_SET_RINGTONE",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "schema_errors": [
+        "unknown tool: ACTION_SET_RINGTONE"
+      ]
+    },
+    {
+      "id": "fresh20260626_015",
+      "query": "Vào danh sách âm báo để chọn chuông mới",
+      "expected": {
+        "tool": "ACTION_GET_RINGTONE",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_SHOW_ALARMS",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_022",
+      "query": "Lưu danh bạ cho Trương Minh Nhật, email nhat.truong@example.vn",
+      "expected": {
+        "tool": "ACTION_INSERT_CONTACT",
+        "arguments": {
+          "contact_info": {
+            "name": "Trương Minh Nhật",
+            "email": "nhat.truong@example.vn"
+          }
+        },
+        "requires_confirmation": true
+      },
+      "prediction": {
+        "tool": "get_contact_info",
+        "arguments": {
+          "name": "Trương Minh Nhật",
+          "key": "email"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_024",
+      "query": "Thêm Nguyễn Phúc Khang vào danh bạ, công ty Delta Lab, địa chỉ 9 Nguyễn Huệ",
+      "expected": {
+        "tool": "ACTION_INSERT_CONTACT",
+        "arguments": {
+          "contact_info": {
+            "name": "Nguyễn Phúc Khang",
+            "company": "Delta Lab",
+            "address": "9 Nguyễn Huệ"
+          }
+        },
+        "requires_confirmation": true
+      },
+      "prediction": {
+        "tool": "ACTION_INSERT_CONTACT",
+        "arguments": {
+          "contact_info": {
+            "name": "Khang",
+            "phone": "0912345678",
+            "company": "Delta Lab",
+            "address": "9 Nguyễn Huệ"
+          }
+        },
+        "requires_confirmation": true
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_025",
+      "query": "Thêm lịch demo sản phẩm thứ Năm 14:15 tại phòng C4",
+      "expected": {
+        "tool": "ACTION_INSERT_EVENT",
+        "arguments": {
+          "TITLE": "demo sản phẩm",
+          "DESCRIPTION": "demo sản phẩm",
+          "EVENT_LOCATION": "phòng C4",
+          "EXTRA_EVENT_BEGIN_TIME": "Thursday 14:15"
+        },
+        "requires_confirmation": true
+      },
+      "prediction": {
+        "tool": "ACTION_INSERT_EVENT",
+        "arguments": {
+          "TITLE": "demo sản phẩm",
+          "DESCRIPTION": "demo sản phẩm",
+          "EVENT_LOCATION": "phòng C4",
+          "EXTRA_EVENT_BEGIN_TIME": "Wednesday 14:15"
+        },
+        "requires_confirmation": true
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_028",
+      "query": "Ghi vào lịch: workshop AI, cả ngày 12 tháng 9",
+      "expected": {
+        "tool": "ACTION_INSERT_EVENT",
+        "arguments": {
+          "TITLE": "workshop AI",
+          "DESCRIPTION": "workshop AI",
+          "EXTRA_EVENT_BEGIN_TIME": "2026-09-12",
+          "EXTRA_EVENT_ALL_DAY": true
+        },
+        "requires_confirmation": true
+      },
+      "prediction": {
+        "tool": "ACTION_INSERT_EVENT",
+        "arguments": {
+          "TITLE": "workshop AI",
+          "DESCRIPTION": "workshop AI",
+          "EXTRA_EVENT_BEGIN_TIME": "12 September"
+        },
+        "requires_confirmation": true
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_030",
+      "query": "Chọn nhiều tài liệu Word để xem",
+      "expected": {
+        "tool": "ACTION_OPEN_DOCUMENT",
+        "arguments": {
+          "mime_types": [
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          ],
+          "allow_multiple": true
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_GET_CONTENT",
+        "arguments": {
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "allow_multiple": true
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_031",
+      "query": "Tôi muốn mở ảnh định dạng webp",
+      "expected": {
+        "tool": "ACTION_OPEN_DOCUMENT",
+        "arguments": {
+          "mime_types": [
+            "image/webp"
+          ]
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "unsupported"
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_032",
+      "query": "Mở tài liệu zip từ bộ nhớ lâu dài",
+      "expected": {
+        "tool": "ACTION_OPEN_DOCUMENT",
+        "arguments": {
+          "mime_types": [
+            "application/zip"
+          ]
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_OPEN_DOCUMENT",
+        "arguments": {
+          "mime_types": [
+            "application/zip"
+          ],
+          "allow_multiple": false
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_037",
+      "query": "Cài chuông 4 giờ 50 sáng nhắc ra sân bay",
+      "expected": {
+        "tool": "ACTION_SET_ALARM",
+        "arguments": {
+          "EXTRA_HOUR": 4,
+          "EXTRA_MINUTES": 50,
+          "EXTRA_MESSAGE": "ra sân bay"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_SET_ALARM",
+        "arguments": {
+          "EXTRA_HOUR": 4,
+          "EXTRA_MINUTES": 50,
+          "EXTRA_MESSAGE": "sân bay"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_038",
+      "query": "Đặt báo thức lúc 13:05 cho ca học chiều",
+      "expected": {
+        "tool": "ACTION_SET_ALARM",
+        "arguments": {
+          "EXTRA_HOUR": 13,
+          "EXTRA_MINUTES": 5,
+          "EXTRA_MESSAGE": "ca học chiều"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "rejected"
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_039",
+      "query": "Alarm 21h10 mỗi thứ Ba và thứ Sáu",
+      "expected": {
+        "tool": "ACTION_SET_ALARM",
+        "arguments": {
+          "EXTRA_HOUR": 21,
+          "EXTRA_MINUTES": 10,
+          "EXTRA_DAYS": [
+            "Tuesday",
+            "Friday"
+          ]
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_SET_ALARM",
+        "arguments": {
+          "EXTRA_HOUR": 21,
+          "EXTRA_MINUTES": 10,
+          "EXTRA_DAYS": [
+            "Wednesday",
+            "Saturday"
+          ]
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_040",
+      "query": "Báo tôi lúc 0 giờ 15 để kiểm tra server",
+      "expected": {
+        "tool": "ACTION_SET_ALARM",
+        "arguments": {
+          "EXTRA_HOUR": 0,
+          "EXTRA_MINUTES": 15,
+          "EXTRA_MESSAGE": "kiểm tra server"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_SET_ALARM",
+        "arguments": {
+          "EXTRA_HOUR": 0,
+          "EXTRA_MINUTES": 15
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_041",
+      "query": "Hẹn bộ đếm 7 phút cho trà",
+      "expected": {
+        "tool": "ACTION_SET_TIMER",
+        "arguments": {
+          "duration": "7 minutes",
+          "EXTRA_MESSAGE": "trà"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_SET_TIMER",
+        "arguments": {
+          "duration": "7 minutes"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_043",
+      "query": "Timer 3 giờ 20 phút cho máy giặt",
+      "expected": {
+        "tool": "ACTION_SET_TIMER",
+        "arguments": {
+          "duration": "3 hours 20 minutes",
+          "EXTRA_MESSAGE": "máy giặt"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_SET_TIMER",
+        "arguments": {
+          "duration": "3 hours 20 minutes"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_044",
+      "query": "Đặt đồng hồ bấm ngược nửa tiếng",
+      "expected": {
+        "tool": "ACTION_SET_TIMER",
+        "arguments": {
+          "duration": "30 minutes"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_SET_TIMER",
+        "arguments": {
+          "duration": "30 minutes",
+          "EXTRA_MESSAGE": "đồng hồ bấm ngược"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_049",
+      "query": "Quay ngay clip hiện trường và lưu kết quả",
+      "expected": {
+        "tool": "ACTION_VIDEO_CAPTURE",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "INTENTION_ACTION_VIDEO_CAMERA",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "schema_errors": [
+        "unknown tool: INTENTION_ACTION_VIDEO_CAMERA"
+      ]
+    },
+    {
+      "id": "fresh20260626_056",
+      "query": "Cho tôi xem liên hệ contacts://club/leader",
+      "expected": {
+        "tool": "ACTION_VIEW_CONTACT",
+        "arguments": {
+          "contact_uri": "contacts://club/leader"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_057",
+      "query": "Mở camera chụp ảnh, tôi tự bấm sau",
+      "expected": {
+        "tool": "INTENT_ACTION_STILL_IMAGE_CAMERA",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_IMAGE_CAPTURE",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_061",
+      "query": "Chuẩn bị giao diện video trong camera",
+      "expected": {
+        "tool": "INTENT_ACTION_VIDEO_CAMERA",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_VIDEO_CAPTURE",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_066",
+      "query": "Gọi tổng đài 1900 9095",
+      "expected": {
+        "tool": "dial",
+        "arguments": {
+          "phone_number": "19009095"
+        },
+        "requires_confirmation": true
+      },
+      "prediction": {
+        "tool": "ACTION_CALL",
+        "arguments": {
+          "phone_number": "19009095"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": [
+        "unknown tool: ACTION_CALL"
+      ]
+    },
+    {
+      "id": "fresh20260626_069",
+      "query": "Lấy email của cô Mai Phương",
+      "expected": {
+        "tool": "get_contact_info",
+        "arguments": {
+          "name": "Mai Phương",
+          "key": "email"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "ACTION_GET_CONTENT",
+        "arguments": {
+          "mime_type": "text/email"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_070",
+      "query": "Số điện thoại bạn Quốc Huy là gì",
+      "expected": {
+        "tool": "get_contact_info",
+        "arguments": {
+          "name": "Quốc Huy",
+          "key": "phone"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "get_contact_info",
+        "arguments": {
+          "name": "Quan Quốc Huy",
+          "key": "phone"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_072",
+      "query": "Cho tôi URI liên hệ của Trần Khánh Vy",
+      "expected": {
+        "tool": "get_contact_info",
+        "arguments": {
+          "name": "Trần Khánh Vy",
+          "key": "uri"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "get_contact_info_from_uri",
+        "arguments": {
+          "contact_uri": "trần khánh vy"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": [
+        "missing required argument: key"
+      ]
+    },
+    {
+      "id": "fresh20260626_073",
+      "query": "Từ contacts://supplier/77 lấy email",
+      "expected": {
+        "tool": "get_contact_info_from_uri",
+        "arguments": {
+          "contact_uri": "contacts://supplier/77",
+          "key": "email"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "get_contact_info",
+        "arguments": {
+          "name": "supplier",
+          "key": "email"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_074",
+      "query": "Tra phone từ content://contacts/people/909",
+      "expected": {
+        "tool": "get_contact_info_from_uri",
+        "arguments": {
+          "contact_uri": "content://contacts/people/909",
+          "key": "phone"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "get_contact_info_from_uri",
+        "arguments": {
+          "contact_uri": "content://contacts/people/909"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": [
+        "missing required argument: key"
+      ]
+    },
+    {
+      "id": "fresh20260626_076",
+      "query": "content://com.android.contacts/contacts/18 có email nào",
+      "expected": {
+        "tool": "get_contact_info_from_uri",
+        "arguments": {
+          "contact_uri": "content://com.android.contacts/contacts/18",
+          "key": "email"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "get_contact_info",
+        "arguments": {
+          "name": "18",
+          "key": "email"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_077",
+      "query": "Mở phần cài đặt bàn phím",
+      "expected": {
+        "tool": "open_settings",
+        "arguments": {
+          "setting_type": "input_method"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": "open_settings",
+        "arguments": {
+          "setting_type": "display"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_083",
+      "query": "Định vị quán bún cá Hạnh Nhiên gần đây",
+      "expected": {
+        "tool": "search_location",
+        "arguments": {
+          "query": "quán bún cá Hạnh Nhiên gần đây"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_090",
+      "query": "Soạn SMS tới +84 934 555 121 nội dung Đơn hàng đã giao",
+      "expected": {
+        "tool": "send_message",
+        "arguments": {
+          "phone_number": "+84934555121",
+          "body": "Đơn hàng đã giao"
+        },
+        "requires_confirmation": true
+      },
+      "prediction": {
+        "tool": "send_message",
+        "arguments": {
+          "phone_number": "+84934555121",
+          "subject": "",
+          "body": "Đơn hàng đã giao"
+        },
+        "requires_confirmation": true
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_095",
+      "query": "Tra cứu bài hướng dẫn nộp thuế cá nhân online",
+      "expected": {
+        "tool": "web_search",
+        "arguments": {
+          "query": "hướng dẫn nộp thuế cá nhân online"
+        },
+        "requires_confirmation": false
+      },
+      "prediction": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_098",
+      "query": "Nhắn cho người đó là tôi tới rồi",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "prediction": {
+        "tool": "send_message",
+        "arguments": {
+          "phone_number": "1234567890",
+          "subject": "",
+          "body": "tôi tới rồi"
+        },
+        "requires_confirmation": true
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_099",
+      "query": "Gửi email báo cáo đi",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "prediction": {
+        "tool": "send_email",
+        "arguments": {
+          "to": [
+            "nhantien@example.com",
+            "nguoitran@example.com"
+          ],
+          "subject": "báo cáo",
+          "body": "xem attachment"
+        },
+        "requires_confirmation": true
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_100",
+      "query": "Mai nhớ đánh thức tôi nhưng tôi chưa nói mấy giờ",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "prediction": {
+        "tool": "clarification",
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "schema_errors": [
+        "unknown tool: clarification"
+      ]
+    },
+    {
+      "id": "fresh20260626_101",
+      "query": "Tạo sự kiện họp",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "prediction": {
+        "tool": "ACTION_INSERT_EVENT",
+        "arguments": {
+          "TITLE": "họp",
+          "DESCRIPTION": "họp"
+        },
+        "requires_confirmation": true
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_102",
+      "query": "Mở tài liệu",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "prediction": {
+        "tool": "ACTION_OPEN_DOCUMENT",
+        "arguments": {},
+        "requires_confirmation": false
+      },
+      "schema_errors": [
+        "missing required argument: mime_types"
+      ]
+    },
+    {
+      "id": "fresh20260626_104",
+      "query": "Đi tới đâu đó nhưng tôi chưa nói địa điểm",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "prediction": {
+        "tool": "search_location",
+        "arguments": {
+          "query": "địa điểm"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_105",
+      "query": "Tra số trong danh bạ",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "prediction": {
+        "tool": "get_contact_info",
+        "arguments": {
+          "name": "danhbạ",
+          "key": "phone"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_106",
+      "query": "Sửa liên hệ của mẹ",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "prediction": {
+        "tool": "ACTION_EDIT_CONTACT",
+        "arguments": {
+          "contact_uri": "name=mẹ"
+        },
+        "requires_confirmation": true
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_107",
+      "query": "Xem liên hệ",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "prediction": {
+        "tool": "ACTION_VIEW_CONTACT",
+        "arguments": {
+          "contact_uri": "tong-hop-lien-he"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_108",
+      "query": "Tạo file mới",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "prediction": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "unsupported"
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_112",
+      "query": "Bật playlist nhạc acoustic trong máy",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "unsupported"
+      },
+      "prediction": {
+        "tool": "audio_player",
+        "arguments": {
+          "album": "playlist acoustic"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": [
+        "unknown tool: audio_player"
+      ]
+    },
+    {
+      "id": "fresh20260626_114",
+      "query": "Cài app ngân hàng mới",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "unsupported"
+      },
+      "prediction": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_115",
+      "query": "Đọc mã OTP trong SMS",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "unsupported"
+      },
+      "prediction": {
+        "tool": "send_message",
+        "arguments": {
+          "phone_number": "+84912345678",
+          "subject": "",
+          "body": "Đọc mã đã gửi"
+        },
+        "requires_confirmation": true
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_116",
+      "query": "Chuyển tiền cho Nam 200 nghìn",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "unsupported"
+      },
+      "prediction": {
+        "tool": "ACTION_VIEW_CONTACT",
+        "arguments": {
+          "contact_uri": "content://telephony号码簿/telephony号码簿"
+        },
+        "requires_confirmation": false
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_117",
+      "query": "Viết status mới lên mạng xã hội giúp tôi",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "unsupported"
+      },
+      "prediction": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_118",
+      "query": "Bật đèn pin",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "unsupported"
+      },
+      "prediction": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_121",
+      "query": "Kết nối với tai nghe Bluetooth của tôi",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "unsupported"
+      },
+      "prediction": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_122",
+      "query": "Mở khóa điện thoại",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "unsupported"
+      },
+      "prediction": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "schema_errors": []
+    },
+    {
+      "id": "fresh20260626_126",
+      "query": "Tóm tắt email mới nhất",
+      "expected": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "unsupported"
+      },
+      "prediction": {
+        "tool": null,
+        "arguments": {},
+        "requires_confirmation": false,
+        "status": "clarification"
+      },
+      "schema_errors": []
+    }
+  ],
+  "per_example": [
+    {
+      "id": "fresh20260626_001",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_002",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": false,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_003",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_004",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_005",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_006",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_007",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_008",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_009",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_010",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_011",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_012",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_013",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": false,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_014",
+      "tool_correct": false,
+      "arguments_exact": true,
+      "schema_valid": false,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_015",
+      "tool_correct": false,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_016",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_017",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_018",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_019",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_020",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_021",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_022",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": false,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_023",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_024",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_025",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_026",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_027",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_028",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_029",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_030",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_031",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_032",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_033",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_034",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_035",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_036",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_037",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_038",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_039",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_040",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_041",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_042",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_043",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_044",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_045",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_046",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_047",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_048",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_049",
+      "tool_correct": false,
+      "arguments_exact": true,
+      "schema_valid": false,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_050",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_051",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_052",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_053",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_054",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_055",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_056",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_057",
+      "tool_correct": false,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_058",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_059",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_060",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_061",
+      "tool_correct": false,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_062",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_063",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_064",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_065",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_066",
+      "tool_correct": false,
+      "arguments_exact": true,
+      "schema_valid": false,
+      "status_correct": true,
+      "confirmation_correct": false,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_067",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_068",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_069",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_070",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_071",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_072",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": false,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_073",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_074",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": false,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_075",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_076",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_077",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_078",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_079",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_080",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_081",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_082",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_083",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_084",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_085",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_086",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_087",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_088",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_089",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_090",
+      "tool_correct": true,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_091",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_092",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_093",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_094",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_095",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_096",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_097",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_098",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": false,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_099",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": false,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_100",
+      "tool_correct": false,
+      "arguments_exact": true,
+      "schema_valid": false,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_101",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": false,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_102",
+      "tool_correct": false,
+      "arguments_exact": true,
+      "schema_valid": false,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_103",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_104",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_105",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_106",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": false,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_107",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_108",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_109",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_110",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_111",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_112",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": false,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_113",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_114",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_115",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": false,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_116",
+      "tool_correct": false,
+      "arguments_exact": false,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_117",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_118",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_119",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_120",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_121",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_122",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    },
+    {
+      "id": "fresh20260626_123",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_124",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_125",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": true,
+      "confirmation_correct": true,
+      "end_to_end": true
+    },
+    {
+      "id": "fresh20260626_126",
+      "tool_correct": true,
+      "arguments_exact": true,
+      "schema_valid": true,
+      "status_correct": false,
+      "confirmation_correct": true,
+      "end_to_end": false
+    }
+  ]
+}

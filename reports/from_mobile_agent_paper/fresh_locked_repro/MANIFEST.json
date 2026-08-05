@@ -1,0 +1,43 @@
+{
+  "package_name": "vintentagent_fresh_locked_repro_package_20260626",
+  "created_at": "2026-06-26",
+  "purpose": "Reproducibility package for the VIntentAgent fresh locked evaluation used as the ICTA 2026 headline generalization estimate.",
+  "headline_metrics": {
+    "n": 126,
+    "tool_selection_accuracy": 0.746031746031746,
+    "schema_valid_rate": 0.9206349206349206,
+    "soft_argument_accuracy": 0.743801652892562,
+    "end_to_end_task_success": 0.5634920634920635,
+    "end_to_end_ci_95": [0.476, 0.647],
+    "confirmation_accuracy": 0.9444444444444444,
+    "null_status_accuracy": 0.36666666666666664
+  },
+  "locked_hashes_sha256": {
+    "data/vi_droidcall_fresh_test_locked_20260626.jsonl": "051C811625F0D22925EA60868BDCE03A67B291E34976636306DB9BF8F13387B4",
+    "data/vi_droidcall_fresh_test_locked_20260626_ledger.csv": "59D9B09257FF97789183F009CC368740DF314CFDA755BF9D3B3B889F16575FC4",
+    "results/v8_hybrid_k5_predictions.jsonl": "A60FD6F891ECBB6D2C5A0176B9376F01B0DEAE664297784F3F095624548664DC",
+    "results/main_report.json": "8A6792C115E36C162A4688BAA5411993ACBA66204B2F34AF4BC2211DE222123F",
+    "results/final_config.json": "5EC2C9306395E35D54E7B960BB27F04A8908B51A64ACC8482FEE40D344A2CF40",
+    "notebooks/vidroidcall_fresh_locked_eval_kaggle_v3.ipynb": "F903F025851EE31401281F75277318BCE7F432B79C2D10CD9646F5B92051B6B3",
+    "kaggle_input/kaggle_fresh_locked_eval_input_20260626.zip": "9C33373DDFB9BBD40FD419591C96F0AC42027B8299C96855E577195E7C6F565A"
+  },
+  "frozen_configuration": {
+    "version": "v8",
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "adapter": "prototype/results/adapter_v8",
+    "retriever": "hybrid",
+    "top_k": 5,
+    "alpha": 0.7,
+    "prompt": "robust",
+    "decoding": "greedy",
+    "max_new_tokens": 256,
+    "postprocessing": "schema-based confirmation override"
+  },
+  "included_directories": {
+    "data": "Fresh locked JSONL and ledger CSV.",
+    "results": "Predictions, reports, analysis, and leakage audit.",
+    "notebooks": "Kaggle GPU notebook v3.",
+    "kaggle_input": "Uploadable Kaggle input bundle.",
+    "scripts": "Local scripts used to create, import, analyze, and evaluate the run."
+  }
+}

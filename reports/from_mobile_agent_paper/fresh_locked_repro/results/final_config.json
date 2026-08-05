@@ -1,0 +1,53 @@
+{
+  "locked_at": "2026-06-26",
+  "status": "frozen_before_any_fresh_test_model_evaluation",
+  "eval_split": "data\\eval\\vi_droidcall_fresh_test_locked_20260626.jsonl",
+  "eval_sha256": "051C811625F0D22925EA60868BDCE03A67B291E34976636306DB9BF8F13387B4",
+  "ledger": "data\\eval\\vi_droidcall_fresh_test_locked_20260626_ledger.csv",
+  "ledger_sha256": "59D9B09257FF97789183F009CC368740DF314CFDA755BF9D3B3B889F16575FC4",
+  "selected_model": {
+    "version": "v8",
+    "rationale": "Chosen before fresh-test evaluation because it was the strongest prior diagnostic configuration, not because of this fresh split.",
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "adapter_path": "results/adapter_v8",
+    "training_file": "data/eval/vi_droidcall_train408_v8.jsonl"
+  },
+  "retrieval": {
+    "type": "hybrid",
+    "top_k": 5,
+    "alpha": 0.7,
+    "alpha_note": "Dense/BM25 interpolation used by vidroidcall_v8_kaggle.ipynb."
+  },
+  "prompt": {
+    "source": "src/evaluate_ft.py",
+    "system_prompt": "SYSTEM_PROMPT + ROBUST_PROMPT_SUFFIX",
+    "robust_prompt": true
+  },
+  "decoding": {
+    "do_sample": false,
+    "temperature": 0.0,
+    "max_new_tokens": 256
+  },
+  "postprocessing": {
+    "fix_confirmation_from_schema": true,
+    "confirmation_policy": "requires_confirmation is enforced from the fixed tool schema, not trusted from model output."
+  },
+  "required_metrics": [
+    "canonical_e2e",
+    "tool_selection_accuracy",
+    "schema_valid_rate",
+    "soft_argument_accuracy",
+    "requires_confirmation_accuracy",
+    "negative_clarification_accuracy",
+    "wilson_95_ci",
+    "per_schema_e2e",
+    "field_level_accuracy"
+  ],
+  "do_not_use_for": [
+    "alpha_tuning",
+    "top_k_tuning",
+    "prompt_tuning",
+    "augmentation_design",
+    "model_version_selection"
+  ]
+}

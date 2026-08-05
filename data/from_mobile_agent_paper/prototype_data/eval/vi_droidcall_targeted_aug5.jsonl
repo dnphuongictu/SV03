@@ -1,0 +1,42 @@
+{"id": "aug5_imgcap_001", "query": "Bấm chụp ảnh ngay bây giờ", "expected": {"tool": "ACTION_IMAGE_CAPTURE", "arguments": {}, "requires_confirmation": false}}
+{"id": "aug5_imgcap_002", "query": "Chụp một tấm hình ngay đi", "expected": {"tool": "ACTION_IMAGE_CAPTURE", "arguments": {}, "requires_confirmation": false}}
+{"id": "aug5_imgcap_003", "query": "Chụp ảnh liền cho tôi", "expected": {"tool": "ACTION_IMAGE_CAPTURE", "arguments": {}, "requires_confirmation": false}}
+{"id": "aug5_camstill_001", "query": "Mở ứng dụng chụp hình", "expected": {"tool": "INTENT_ACTION_STILL_IMAGE_CAMERA", "arguments": {}, "requires_confirmation": false}}
+{"id": "aug5_camstill_002", "query": "Khởi động camera để chụp ảnh", "expected": {"tool": "INTENT_ACTION_STILL_IMAGE_CAMERA", "arguments": {}, "requires_confirmation": false}}
+{"id": "aug5_camstill_003", "query": "Mở camera lên", "expected": {"tool": "INTENT_ACTION_STILL_IMAGE_CAMERA", "arguments": {}, "requires_confirmation": false}}
+{"id": "aug5_opendoc_mp3_001", "query": "Mở file nhạc MP3", "expected": {"tool": "ACTION_OPEN_DOCUMENT", "arguments": {"mime_types": ["audio/mpeg"]}, "requires_confirmation": false}}
+{"id": "aug5_opendoc_mp3_002", "query": "Chọn file âm thanh định dạng MP3 để phát", "expected": {"tool": "ACTION_OPEN_DOCUMENT", "arguments": {"mime_types": ["audio/mpeg"]}, "requires_confirmation": false}}
+{"id": "aug5_opendoc_jpg_001", "query": "Mở ảnh JPG từ thư mục", "expected": {"tool": "ACTION_OPEN_DOCUMENT", "arguments": {"mime_types": ["image/jpeg"]}, "requires_confirmation": false}}
+{"id": "aug5_opendoc_jpg_002", "query": "Chọn nhiều ảnh định dạng JPG", "expected": {"tool": "ACTION_OPEN_DOCUMENT", "arguments": {"mime_types": ["image/jpeg"], "allow_multiple": true}, "requires_confirmation": false}}
+{"id": "aug5_createdoc_docx_001", "query": "Tạo file Word mới tên Hợp đồng 2026", "expected": {"tool": "ACTION_CREATE_DOCUMENT", "arguments": {"mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "initial_name": "Hợp đồng 2026"}, "requires_confirmation": false}}
+{"id": "aug5_createdoc_docx_002", "query": "Tạo tài liệu Word tên Luận văn tốt nghiệp", "expected": {"tool": "ACTION_CREATE_DOCUMENT", "arguments": {"mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "initial_name": "Luận văn tốt nghiệp"}, "requires_confirmation": false}}
+{"id": "aug5_dial_nospace_001", "query": "Gọi số điện thoại 090 123 4567", "expected": {"tool": "dial", "arguments": {"phone_number": "0901234567"}, "requires_confirmation": true}}
+{"id": "aug5_dial_nospace_002", "query": "Bấm số 028 3838 3838 gọi cho cửa hàng", "expected": {"tool": "dial", "arguments": {"phone_number": "02838383838"}, "requires_confirmation": true}}
+{"id": "aug5_dial_nospace_003", "query": "Gọi hotline 1900 1234", "expected": {"tool": "dial", "arguments": {"phone_number": "19001234"}, "requires_confirmation": true}}
+{"id": "aug5_alarm_wed_001", "query": "Đặt báo thức 6 giờ sáng thứ Tư mỗi tuần", "expected": {"tool": "ACTION_SET_ALARM", "arguments": {"EXTRA_HOUR": 6, "EXTRA_MINUTES": 0, "EXTRA_DAYS": ["Wednesday"]}, "requires_confirmation": false}}
+{"id": "aug5_alarm_wed_002", "query": "Cài alarm 7 giờ thứ Hai và thứ Tư", "expected": {"tool": "ACTION_SET_ALARM", "arguments": {"EXTRA_HOUR": 7, "EXTRA_MINUTES": 0, "EXTRA_DAYS": ["Monday", "Wednesday"]}, "requires_confirmation": false}}
+{"id": "aug5_alarm_sat_001", "query": "Báo thức 8 giờ thứ Bảy", "expected": {"tool": "ACTION_SET_ALARM", "arguments": {"EXTRA_HOUR": 8, "EXTRA_MINUTES": 0, "EXTRA_DAYS": ["Saturday"]}, "requires_confirmation": false}}
+{"id": "aug5_alarm_sat_002", "query": "Đặt alarm 9 giờ thứ Bảy và Chủ Nhật", "expected": {"tool": "ACTION_SET_ALARM", "arguments": {"EXTRA_HOUR": 9, "EXTRA_MINUTES": 0, "EXTRA_DAYS": ["Saturday", "Sunday"]}, "requires_confirmation": false}}
+{"id": "aug5_alarm_kem_001", "query": "Đặt báo thức 8 giờ kém 10 sáng", "expected": {"tool": "ACTION_SET_ALARM", "arguments": {"EXTRA_HOUR": 7, "EXTRA_MINUTES": 50}, "requires_confirmation": false}}
+{"id": "aug5_alarm_kem_002", "query": "Cài alarm 10 giờ kém 15", "expected": {"tool": "ACTION_SET_ALARM", "arguments": {"EXTRA_HOUR": 9, "EXTRA_MINUTES": 45}, "requires_confirmation": false}}
+{"id": "aug5_alarm_kem_003", "query": "Báo thức lúc 12 giờ kém 5 trưa", "expected": {"tool": "ACTION_SET_ALARM", "arguments": {"EXTRA_HOUR": 11, "EXTRA_MINUTES": 55}, "requires_confirmation": false}}
+{"id": "aug5_neg_misscall_001", "query": "Gọi lại cho người vừa gọi đến cho tôi", "expected": {"tool": null, "status": "clarification"}}
+{"id": "aug5_neg_misscall_002", "query": "Gọi lại số vừa gọi nhỡ cho tôi", "expected": {"tool": null, "status": "clarification"}}
+{"id": "aug5_neg_install_001", "query": "Tải và cài ứng dụng Facebook về máy", "expected": {"tool": null, "status": "clarification"}}
+{"id": "aug5_neg_install_002", "query": "Tải và cài app TikTok về điện thoại", "expected": {"tool": null, "status": "clarification"}}
+{"id": "aug5_neg_videocall_001", "query": "Gọi video cho chị Lan", "expected": {"tool": null, "status": "clarification"}}
+{"id": "aug5_neg_videocall_002", "query": "Tôi muốn video call với anh Minh", "expected": {"tool": null, "status": "clarification"}}
+{"id": "aug5_neg_viewcal_001", "query": "Xem lịch hôm nay của tôi", "expected": {"tool": null, "status": "clarification"}}
+{"id": "aug5_neg_viewcal_002", "query": "Cho xem lịch tuần này", "expected": {"tool": null, "status": "clarification"}}
+{"id": "aug5_websearch_tra_001", "query": "Tra giá vé máy bay Hà Nội Sài Gòn", "expected": {"tool": "web_search", "arguments": {"query": "giá vé máy bay Hà Nội Sài Gòn"}, "requires_confirmation": false}}
+{"id": "aug5_websearch_tra_002", "query": "Tra hướng dẫn nấu phở bò", "expected": {"tool": "web_search", "arguments": {"query": "hướng dẫn nấu phở bò"}, "requires_confirmation": false}}
+{"id": "aug5_websearch_tra_003", "query": "Tra thông tin thuốc paracetamol", "expected": {"tool": "web_search", "arguments": {"query": "thông tin thuốc paracetamol"}, "requires_confirmation": false}}
+{"id": "aug5_viewcontact_uri_001", "query": "Xem thông tin liên hệ URI contacts://id/25", "expected": {"tool": "ACTION_VIEW_CONTACT", "arguments": {"contact_uri": "contacts://id/25"}, "requires_confirmation": false}}
+{"id": "aug5_viewcontact_uri_002", "query": "Mở contact có URI content://contacts/data/50", "expected": {"tool": "ACTION_VIEW_CONTACT", "arguments": {"contact_uri": "content://contacts/data/50"}, "requires_confirmation": false}}
+{"id": "aug5_editcontact_uri_001", "query": "Chỉnh sửa liên hệ có URI contacts://id/33", "expected": {"tool": "ACTION_EDIT_CONTACT", "arguments": {"contact_uri": "contacts://id/33"}, "requires_confirmation": true}}
+{"id": "aug5_editcontact_uri_002", "query": "Cập nhật contact URI content://contacts/people/8", "expected": {"tool": "ACTION_EDIT_CONTACT", "arguments": {"contact_uri": "content://contacts/people/8"}, "requires_confirmation": true}}
+{"id": "aug5_getcontent_pdf_001", "query": "Chọn file PDF để tải lên cloud", "expected": {"tool": "ACTION_GET_CONTENT", "arguments": {"mime_type": "application/pdf"}, "requires_confirmation": false}}
+{"id": "aug5_getcontent_img_001", "query": "Chọn nhiều ảnh để đính kèm", "expected": {"tool": "ACTION_GET_CONTENT", "arguments": {"mime_type": "image/*", "allow_multiple": true}, "requires_confirmation": false}}
+{"id": "aug5_getcontent_audio_001", "query": "Chọn nhiều file âm nhạc để import vào app", "expected": {"tool": "ACTION_GET_CONTENT", "arguments": {"mime_type": "audio/*", "allow_multiple": true}, "requires_confirmation": false}}
+{"id": "aug5_settings_display_001", "query": "Vào cài đặt độ sáng màn hình", "expected": {"tool": "open_settings", "arguments": {"setting_type": "display"}, "requires_confirmation": false}}
+{"id": "aug5_settings_display_002", "query": "Mở trang cài đặt màn hình hiển thị", "expected": {"tool": "open_settings", "arguments": {"setting_type": "display"}, "requires_confirmation": false}}
